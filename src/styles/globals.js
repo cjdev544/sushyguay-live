@@ -2,7 +2,7 @@ import React from 'react'
 import { css, Global } from '@emotion/core'
 import { Helmet } from 'react-helmet'
 import emotionNormalize from 'emotion-normalize'
-import color from '../styles/colors'
+import colors from '../styles/colors'
 import font from '../styles/fonts'
 import size from '../styles/sizes'
 import mq from '../styles/breakPoints'
@@ -53,11 +53,14 @@ const Globals = () => {
                             font-size: ${size.title1Mobil};
                         }                        
                     }
+                    h2 {
+                        font-family: ${font.secondFont};
+                    }
                     p {
                         margin: 0 0 20px;
                     }
                     a {
-                        color: ${color.accent};
+                        color: ${colors.accent};
                     }
 
                     /* Typography */
@@ -68,7 +71,7 @@ const Globals = () => {
                     .title2 {
                         font-size: ${size.title2};
                         line-height: 1.1;
-                        margin-bottom: 20px;
+                        margin-bottom: 20px;   
                     }
                     .title3 {
                         font-size: ${size.title3};
@@ -81,6 +84,9 @@ const Globals = () => {
                     .smaller {
                         font-size: ${size.smaller};
                         line-height: 1.5;
+                    }
+                    .text-center {
+                        text-align: center;
                     }
                 `}
             /> 

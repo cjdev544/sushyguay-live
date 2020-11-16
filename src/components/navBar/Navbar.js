@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import NavLinks from './NavLinks'
 import Logo from './Logo'
-import LogoMenu from './LogoMenu'
 import styled from '@emotion/styled'
 import color from '../../styles/colors'
 import mq from '../../styles/breakPoints'
@@ -10,10 +9,13 @@ import mq from '../../styles/breakPoints'
  *  Styles
  */
 const Navegation = styled.nav`
-    height: 18vh;
+    height: 12vh;
     display: flex;
-    background-color: transparent;
-    position: relative;
+    background: linear-gradient(180deg, rgba(0,0,0,.8) 1%, rgba(0,0,0,.8) 70%,  rgba(0,0,0,.5) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     justify-content: space-between;
     text-transform: uppercase;
     margin: 0 auto;
@@ -23,7 +25,10 @@ const Navegation = styled.nav`
 
     ${mq('max', 'medium')} {
         border-bottom: 2px solid #33333320;
-        position: sticky;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 8vh;
         top: 0;
         left: 0;
@@ -98,7 +103,6 @@ const Navbar = () => {
     return (
         <Navegation>
             <Logo />
-            <LogoMenu />
             <Toggle 
                 navbarOpen={ navbarOpen }
                 onClick={ () => setNavbarOpen( !navbarOpen )}

@@ -4,5 +4,6 @@ export default {
     black: '#000',
     primary: '#434343',
     secondary: '#dedede',
-    accent: '#d4671f'
+    accent: 'rgb(238, 27, 36)',
+    callToAction: 'rgb(168, 172, 29)'
 }
