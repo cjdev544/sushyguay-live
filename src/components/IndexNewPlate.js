@@ -8,7 +8,6 @@ import mq from '../styles/breakPoints'
 import Button from './Button'
 
 const Article = styled.article`
-    overflow:auto;
     
     h3 { 
         color: ${ colors.accent }; 
@@ -27,24 +26,40 @@ const Article = styled.article`
     }
 
     ${ mq('min', 'small')} {
-        position: relative;
+        display: grid;
+        grid-template-columns: 10;
+        grid-template-rows: 10;
 
-        img {
-            max-width: 55%;
-            max-height: 35rem;
-            box-shadow: 4px 4px 2px ${ colors.accent };
+        .divImg {
+            width: 350px;
+            box-shadow: -4px 4px 2px ${ colors.accent };
+            grid-column: 6/11;
+            grid-row: 1/6;          
         }
 
         .divPositionNewPlate {
-            position: absolute;
-            right: 0;
-            top: 20rem;
-            width: 60%;
             background-color: #fff;
             padding: 2rem;
-            box-shadow: -4px 4px 2px ${ colors.accent };
+            box-shadow: 4px -4px 2px ${ colors.accent };
+            grid-column: 1/9;
+            grid-row: 4/11;
+            z-index: 10;
         }
 
+    }
+
+    ${ mq('min', 'medium')} { 
+        
+        .divImg {
+            width: 450px;
+            grid-column: 6/11;
+            grid-row: 1/6;
+        }
+
+        .divPositionNewPlate {
+             grid-column: 1/7;
+             grid-row: 3/11;
+        }
     }
 `
 
@@ -65,7 +80,9 @@ const IndexNewPlate = () => {
         <section>
             <h2 className="title2 text-center">{ tituloDeSeccion }</h2>
             <Article>
-                <Image fluid={ image } alt={ nombreDelNuevoPlato } />
+                <div className='divImg'>
+                    <Image fluid={ image } alt={ nombreDelNuevoPlato } />
+                </div>
                 <div className="divPositionNewPlate">
                     <h3 className="title3">{ nombreDelNuevoPlato }</h3>
                     <p>{ descripcionDelPlato }</p>

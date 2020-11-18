@@ -34,6 +34,7 @@ const Globals = () => {
                     body {
                         font-family: serif;
                         font-size: ${size.base};
+                        background-color: ${ colors.primary };
                     }
                     ul {
                         list-style: none;

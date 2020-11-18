@@ -1,8 +1,9 @@
 import React from 'react'
+import { FaCartArrowDown } from 'react-icons/fa'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import font from '../../styles/fonts'
-import color from '../../styles/colors'
+import colors from '../../styles/colors'
 
 /**
  *  Styles
@@ -10,7 +11,7 @@ import color from '../../styles/colors'
 const NavLink = styled(Link)`
     font-family: ${font.firstFont};
     text-decoration: none;
-    color: ${color.white};
+    color: ${colors.white};
     font-size: 2rem;
     font-weight: 700;
     display: inline-block;
@@ -27,20 +28,26 @@ const NavLink = styled(Link)`
         width: 0%;
         content: ".";
         color: transparent;
-        background: ${color.accent};
+        background: ${colors.accent};
         height: 1px;
         transition: all 0.4s ease-in;
     }
 
     :hover {
-        color: ${color.accent};
+        color: ${colors.accent};
         ::after {
-        width: 100%;
+            width: 100%;
+        }
+
+        &:last-of-type {
+            ::after {
+                width: 0;
+            }
         }
     }
 
     &.active {
-        color: ${color.accent};
+        color: ${colors.accent};
         ::after {
         width: 100%;
         }
@@ -50,6 +57,11 @@ const NavLink = styled(Link)`
         padding: 20px 0;
         font-size: 2rem;
         z-index: 6;
+    }
+
+    &:last-of-type {
+        font-size: 3rem;
+        color: ${ colors.callToAction }
     }
 `
 
@@ -61,7 +73,7 @@ const NavLinks = () => {
             <NavLink to={'/menu'} activeClassName="active">MENÚ</NavLink>            
             <NavLink to={'/galeria'} activeClassName="active">GALERÍA</NavLink>
             <NavLink to={'/contacto'} activeClassName="active">CONTACTO</NavLink>
-            <NavLink to={'/'} activeClassName="active">CARRITO</NavLink>   
+            <NavLink to={'/'}><FaCartArrowDown /></NavLink>   
         </>
     )
 }

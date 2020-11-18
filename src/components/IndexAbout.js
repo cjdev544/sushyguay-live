@@ -8,13 +8,11 @@ import { css } from '@emotion/core'
 import colors from '../styles/colors'
 import mq from '../styles/breakPoints'
 import { Link } from 'gatsby'
-import sizes from '../styles/sizes'
 
 const IndexAbout = () => {
 
     const { imagenDeFondo, imagenQueAcompaAAlTextoNosotros: imgAbout } = QueryHomePage()
     const { parrafoPrincipal } = QueryAboutPage()
-    console.log(parrafoPrincipal)
 
     const ImgBackgroundAbautSection = styled(BackgroundImage)`
         position: relative;

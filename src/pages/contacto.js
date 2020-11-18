@@ -1,10 +1,22 @@
 import React from 'react'
 import Layout from '../components/layout'
+import OtherHeader from '../components/OtherHeader'
+import QueryContactPage from '../queries/contact'
 
 const Contacto = () => {
+
+    const data = QueryContactPage()
+    const { imagenDePortada } = data
+    
     return (
         <Layout>
-            <h1>Contacto</h1>
+            <OtherHeader 
+                hero={ imagenDePortada }
+                title={ "Contactanos" }
+            />
+            <main>
+                <h1>Contacto</h1>
+            </main>
         </Layout>
     )
 }
