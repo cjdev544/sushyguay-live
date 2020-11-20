@@ -11,14 +11,14 @@ import { Link } from 'gatsby'
 const Article = styled.article`
     margin: 0 auto;
     text-align: center;
-    border: 4px solid ${ colors.accent };
+    border: 2px solid ${ colors.secondary };
     margin-bottom: 2rem;
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     transition: all .4s ease-in-out;
 
     &:hover {       
-        transform: scale(1.02);
+        transform: scale(1.01);
     }
 
     a { 
@@ -32,6 +32,7 @@ const Article = styled.article`
         margin: 0;
         margin-bottom: 1.5rem;
         padding: 1rem;
+        font-weight: 300;
     }
 
     p { 
@@ -49,13 +50,20 @@ const Fotter = styled.footer`
     font-weight: bold;
     background-color: ${ colors.secondary };
     padding: 1rem;
-    border-radius: 15px;
+    border-radius: 10px;
 
     p { font-style: normal; }
 
+    .ofert {
+        background-color: ${ colors.callToAction };
+        padding: .5rem;
+        border-radius: 5px;
+        color: ${ colors.accent };
+    }
+
     span { 
-        color: ${ colors.accent }; 
         font-size: 20px;
+        color: ${ colors.black };
     }
 `
 
@@ -81,7 +89,7 @@ const IndexPlate = ({ plate }) => {
                 <p>{ descripcionCorta }</p>
                 <Fotter>
                     <p css={ css`text-decoration: line-through`}>Precio: { precio } €</p>
-                    <p>Oferta: <span>{ enOferta } €</span></p>
+                    <p className="ofert">Oferta: <span>{ enOferta } €</span></p>
                 </Fotter>
             </Link>
         </Article>
