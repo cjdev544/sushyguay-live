@@ -15,6 +15,7 @@ const InputForm = styled.input`
     display: block;
     width: 100%;
     margin-bottom: 1rem;
+    :focus {outline: none;box-shadow: none;} 
 `
 
 const Btn = styled.button`

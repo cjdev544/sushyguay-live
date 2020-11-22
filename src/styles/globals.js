@@ -91,7 +91,7 @@ const Globals = () => {
                         text-align: center;
                     }
 
-                    // Spaces
+                    /* Spaces */
                     .container {
                         width: ${ spaces.width };
                         max-width: ${ spaces.maxWidth };
