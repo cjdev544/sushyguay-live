@@ -22,7 +22,6 @@ import {
  *  Styles
  */
 const FooterMain = styled.div`
-    background-color: rgba(0,0,0,.92);
     color: ${ colors.secondary };
     font-size: ${ sizes.small };
     display: flex;
@@ -110,60 +109,62 @@ const Footer = () => {
 
 
     return (
-        <footer>
-            <FooterMain>
-                <div className="space">
-                    <h2>Contacto</h2>
-                    <p> <FaMapMarkerAlt className="fontIcon" /> { direccion }</p>
-                    <p> <FaPhone className="fontIcon" /> { telefono }</p>
-                    <p> <FaMailBulk className="fontIcon" /> { correo }</p>
-                </div>
-                <div className="space">
-                    <h2>Legales</h2>
-                    <Link to={'/'}>Aviso Legal</Link>
-                    <Link to={'/'}>Politica de privacidad</Link>
-                </div>
-                <div>
-                    <div css={ 
-                        css`display: flex;
-                        margin-top: 1rem;
-                        margin-bottom: 2rem;
-                    `}>
-                        <a 
-                            href={ paginaDeInstagram } 
-                            target="_blank"
-                            rel="noreferrer" 
-                            aria-label="Instagram"
-                        >
-                            <FaInstagram className="colorLink" />
-                        </a>
-                        <a 
-                            href={ paginaDeFacebook }
-                            target="_blank"
-                            rel="noreferrer" 
-                            aria-label="Facebook"
-                        >
-                            <FaFacebook className="colorLink" />
-                        </a>
-                        <Link 
-                            to={'/contacto'}
-                        >
-                            <FaMailBulk className="colorLink" />
-                        </Link>
-                        <a 
-                            href="/" 
-                            target="_blank"
-                            rel="noreferrer" 
-                            aria-label="WhatsApp"
-                        >
-                            <FaWhatsapp className="colorLink" />
-                        </a>
-                    </div>  
-                    <Button 
-                        text={'Ver Carrito'}
-                    />
-                </div>             
-            </FooterMain>
+        <footer css={ css`background-color: rgba(0,0,0,.92);`}>
+            <div className="container">
+                <FooterMain>
+                    <div className="space">
+                        <h2>Contacto</h2>
+                        <p> <FaMapMarkerAlt className="fontIcon" /> { direccion }</p>
+                        <p> <FaPhone className="fontIcon" /> { telefono }</p>
+                        <p> <FaMailBulk className="fontIcon" /> { correo }</p>
+                    </div>
+                    <div className="space">
+                        <h2>Legales</h2>
+                        <Link to={'/'}>Aviso Legal</Link>
+                        <Link to={'/'}>Politica de privacidad</Link>
+                    </div>
+                    <div>
+                        <div css={ 
+                            css`display: flex;
+                            margin-top: 1rem;
+                            margin-bottom: 2rem;
+                        `}>
+                            <a 
+                                href={ paginaDeInstagram } 
+                                target="_blank"
+                                rel="noreferrer" 
+                                aria-label="Instagram"
+                            >
+                                <FaInstagram className="colorLink" />
+                            </a>
+                            <a 
+                                href={ paginaDeFacebook }
+                                target="_blank"
+                                rel="noreferrer" 
+                                aria-label="Facebook"
+                            >
+                                <FaFacebook className="colorLink" />
+                            </a>
+                            <Link 
+                                to={'/contacto'}
+                            >
+                                <FaMailBulk className="colorLink" />
+                            </Link>
+                            <a 
+                                href="/" 
+                                target="_blank"
+                                rel="noreferrer" 
+                                aria-label="WhatsApp"
+                            >
+                                <FaWhatsapp className="colorLink" />
+                            </a>
+                        </div>  
+                        <Button 
+                            text={'Ver Carrito'}
+                        />
+                    </div>             
+                </FooterMain>
+            </div>
             <Copy>
                 <p>Todos los derechos reervados { nombreDeLaMarca } { year } &copy;</p>
                 <p>Desarrollado por <a href="/">CJDev</a></p>

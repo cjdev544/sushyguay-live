@@ -23,7 +23,7 @@ const IndexPlates = () => {
     const { platosEnOferta } = QueryHomePage()
 
     return (
-        <section>
+        <section className="container spaceSectionUp spaceSectionDown">
             <h2 className="title2 text-center">Ofertas de la semana</h2>
             <Div>
             {

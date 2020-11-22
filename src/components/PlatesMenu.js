@@ -14,6 +14,7 @@ const Article = styled.article`
     display: flex;   
     margin-bottom: 4rem; 
     width: 100%;
+    background-color: #fff;
 
     ${mq('min', 'small')} {
         width: 48%;

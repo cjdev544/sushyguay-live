@@ -101,7 +101,7 @@ const AboutContent = ({ data }) => {
             <ContentUnderHero 
                 parrafoPrincipal={ parrafoPrincipal }
             />
-            <Container>
+            <Container className="container spaceSectionDown">
                 <ImgDiv1>
                     <Image fluid={ imagen1.fluid } alt="Primera imagen sobre nosotros" />
                 </ImgDiv1>

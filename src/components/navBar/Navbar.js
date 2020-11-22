@@ -20,11 +20,11 @@ const Navegation = styled.nav`
     text-transform: uppercase;
     margin: 0 auto;
     padding: 0;
-    z-index: 2;
+    z-index: 1000;
     align-self: center;
 
     ${mq('max', 'medium')} {
-        border-bottom: 2px solid #33333320;
+        border-bottom: 2px solid #333;
         position: fixed;
         top: 0;
         left: 0;
@@ -58,7 +58,8 @@ const NavBox = styled.div`
         width: 100%;
         justify-content: flex-start;
         padding-top: 10vh;
-        background-color: ${color.accent};
+        /* Color Hamburger background menu */
+        background: rgba(0,0,0,.95);
         transition: all 0.3s ease-in;
         top: 8vh;
         left: ${props => (props.open ? "-100%" : "0")};

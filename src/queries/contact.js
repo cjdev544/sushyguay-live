@@ -12,6 +12,7 @@ const QueryContactPage = () => {
                             ...GatsbyDatoCmsFluid_tracedSVG
                         }
                     }
+                    parrafoPrincipal
                 }
             }
         }

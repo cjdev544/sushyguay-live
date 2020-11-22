@@ -111,7 +111,7 @@ const ContentGalery = () => {
             <ContentUnderHero 
                 parrafoPrincipal={ parrafo }
             />   
-            <ImgContainer>
+            <ImgContainer className="container spaceSectionDown">
                 {
                     fotosDeLaGaleria.map((img, index) => (
                         <GaleryImage 

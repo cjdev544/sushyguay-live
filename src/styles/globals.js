@@ -6,6 +6,7 @@ import colors from '../styles/colors'
 import font from '../styles/fonts'
 import size from '../styles/sizes'
 import mq from '../styles/breakPoints'
+import spaces from './spaces'
 
 const Globals = () => { 
     return (
@@ -88,6 +89,22 @@ const Globals = () => {
                     }
                     .text-center {
                         text-align: center;
+                    }
+
+                    // Spaces
+                    .container {
+                        width: ${ spaces.width };
+                        max-width: ${ spaces.maxWidth };
+                        margin: 0 auto;
+                    }
+                    .spaceSectionDown { 
+                        margin-bottom: ${ spaces.spaceSection };
+                    }
+                    .spaceSectionUp {
+                        margin-top: ${ spaces.spaceSection };
+                    }
+                    .spaceTitle {
+                        margin-bottom: ${ spaces.spaceTitle };
                     }
                 `}
             /> 

@@ -77,7 +77,7 @@ const IndexNewPlate = () => {
     const image = imagenDelNuevoPlato.fluid
 
     return (
-        <section>
+        <section className="container spaceSectionDown">
             <h2 className="title2 text-center">{ tituloDeSeccion }</h2>
             <Article>
                 <div className='divImg'>

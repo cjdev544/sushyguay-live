@@ -7,6 +7,8 @@ import QueryPlates from '../queries/plates'
 import mq from '../styles/breakPoints'
 import ContentUnderHero from './ContentUnderHero'
 import PlatesMenu from './PlatesMenu'
+import spaces from '../styles/spaces'
+import colors from '../styles/colors'
 
 /**
  *  Styles
@@ -16,6 +18,30 @@ const MenuFilter = styled.ul`
     justify-content: space-between;
     width: 70%;
     margin: 0 auto;
+    margin-bottom: ${ spaces.spaceTitle };
+
+    ${mq('max', 'small')} {
+        flex-direction: column;
+        margin-bottom: 3rem;
+        align-items: center;
+
+        button { margin-bottom: 1rem; }
+    }
+`
+const Button = styled.button`
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    :focus {outline: none;box-shadow: none;} 
+    :active {outline: none;box-shadow: none;} 
+    &.btnActive { 
+        color: ${ colors.accent };
+        border-bottom: 3px solid ${ colors.accent };
+        padding-bottom: .6rem;
+        font-weight: bold;
+    }
 `
 
 const ContentMenu = () => {
@@ -60,6 +86,13 @@ const ContentMenu = () => {
                 plates: platesSelected
             })
         }
+        const ButtonsFilter = document.querySelectorAll('.btnFilter')
+        ButtonsFilter.forEach(btn => {
+            btn.classList.remove('btnActive')
+        });
+
+        const btnLink = document.getElementById( e.target.value )
+        btnLink.classList.toggle('btnActive')
    }
 
 
@@ -71,31 +104,38 @@ const ContentMenu = () => {
             <nav>
                 <MenuFilter>
                     <li>
-                        <button
+                        <Button
                             onClick={ (e) => filterSelector(e) }
                             value={"Todos"}
-                        >TODOS</button>
+                            id="Todos"
+                            className="btnFilter btnActive"
+                        >TODOS</Button>
                     </li>
                     {                        
                         filter.categories.map(cat => (
                             <li key={ cat }>
-                                <button
+                                <Button
                                     onClick={ (e) => filterSelector(e) }
                                     value={ cat }
-                                >{ cat }</button>
+                                    id={ cat }
+                                    className="btnFilter"
+                                >{ cat.toUpperCase() }</Button>
                             </li>
                         ))
                     }
                 </MenuFilter>
-                <div css={ css`
-                    display: block;
+                <div 
+                    className="container spaceSectionDown"
+                    css={ css`
+                        display: block;                        
 
-                    ${mq('min', 'small')} {
-                        display: flex;
-                        justify-content: space-between;
-                        flex-wrap: wrap;
-                    }
-                `}>
+                        ${mq('min', 'small')} {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                        }
+                    `}
+                >
                     {
                         filter.plates.map(plate => (
                             <PlatesMenu 

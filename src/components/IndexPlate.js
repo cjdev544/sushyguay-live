@@ -11,7 +11,8 @@ import { Link } from 'gatsby'
 const Article = styled.article`
     margin: 0 auto;
     text-align: center;
-    border: 2px solid ${ colors.secondary };
+    border: 1px solid ${ colors.secondary };
+    background-color: #fff;
     margin-bottom: 2rem;
     border-radius: 10px;
     overflow: hidden;
@@ -52,13 +53,16 @@ const Fotter = styled.footer`
     padding: 1rem;
     border-radius: 10px;
 
-    p { font-style: normal; }
+    p { 
+        font-style: normal; 
+        color: red;
+    }
 
     .ofert {
         background-color: ${ colors.callToAction };
         padding: .5rem;
         border-radius: 5px;
-        color: ${ colors.accent };
+        color: #000;
     }
 
     span { 

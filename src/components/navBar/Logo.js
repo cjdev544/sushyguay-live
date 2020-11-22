@@ -7,11 +7,12 @@ const LogoLink = styled(Link)`
    max-width: 60px;
    margin-top: -.8rem;
    margin-left: -1rem;
+   margin-left: 2rem;
 
   @media (min-width: 768px) {
     max-width: 100px;
     margin-top: -1.5rem;
-    margin-left: -1.6rem;
+    margin-left: 2rem;
   }
 `
 

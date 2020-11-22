@@ -28,7 +28,7 @@ const NavLink = styled(Link)`
         width: 0%;
         content: ".";
         color: transparent;
-        background: ${colors.accent};
+        background: ${colors.accent};        
         height: 1px;
         transition: all 0.4s ease-in;
     }
@@ -61,7 +61,8 @@ const NavLink = styled(Link)`
 
     &:last-of-type {
         font-size: 3rem;
-        color: ${ colors.callToAction }
+        color: ${ colors.callToAction };
+        margin-right: 2rem;
     }
 `
 
