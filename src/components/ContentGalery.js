@@ -4,11 +4,16 @@ import styled from '@emotion/styled'
 import ContentUnderHero from './ContentUnderHero'
 import GaleryImage from './GaleryImage'
 import mq from '../styles/breakPoints'
+import  SimpleReactLightbox from 'simple-react-lightbox'
+import { SRLWrapper } from 'simple-react-lightbox'
+import colors from '../styles/colors'
+import fonts from '../styles/fonts'
 
 /**
  *  Styles
  */
 const ImgContainer = styled.div`
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -23,8 +28,8 @@ const ImgContainer = styled.div`
     
 
     .img-item {
-        width: 47vw;
-        height: 47vw;
+        width: 45vw;
+        height: 45vw;
 
         ${mq('min', 'medium')} {
             height:31vw;
@@ -106,23 +111,53 @@ const ContentGalery = () => {
 
     const { parrafo, fotosDeLaGaleria } = QueryGaleryPage()
 
+const options = {    
+    buttons: {
+        backgroundColor: colors.accent,
+        iconColor: "rgba(255, 255, 255, 0.7)",
+    },
+    caption: {
+        captionColor: '#FFFFFF',
+        captionContainerPadding: '0',
+        captionFontFamily: fonts.firstFont,
+        captionFontSize: '20px',
+        captionFontStyle: 'italic',
+        // captionFontWeight: 'inherit',
+        // captionTextTransform: 'inherit',
+        showCaption: true
+    },
+    translations: {
+        autoplayText: 'Reproducción Auttomática',
+        closeText: 'Cerrar',
+        downloadText: 'Descargar',
+        fullscreenText: 'Pantalla Completa',
+        nextText: 'Siguiente',
+        pauseText: 'Pausar',
+        previousText: 'Anterior',
+        thumbnailsText: 'Ocultar Miniaturas',
+        zoomOutText: 'Zoom Out'
+      }
+};
+
     return (
-        <>
+        <SimpleReactLightbox>
             <ContentUnderHero 
                 parrafoPrincipal={ parrafo }
             />   
-            <ImgContainer className="container spaceSectionDown">
-                {
-                    fotosDeLaGaleria.map((img, index) => (
-                        <GaleryImage 
-                            key={ img.originalId }
-                            index={ index }
-                            image={ img }
-                        />
-                    ))
-                }
-            </ImgContainer>
-        </>
+            <SRLWrapper options={options}>
+                <ImgContainer className="container spaceSectionDown">
+                    {
+                        fotosDeLaGaleria.map((img, index) => (
+                            <GaleryImage 
+                                key={ img.originalId }
+                                index={ index }
+                                image={ img }
+                            />
+                        ))
+                    }
+                </ImgContainer>
+            </SRLWrapper>
+        </SimpleReactLightbox>
     )
 }
 

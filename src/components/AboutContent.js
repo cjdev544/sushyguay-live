@@ -102,10 +102,18 @@ const AboutContent = ({ data }) => {
                 parrafoPrincipal={ parrafoPrincipal }
             />
             <Container className="container spaceSectionDown">
-                <ImgDiv1>
+                <ImgDiv1
+                    data-sal="slide-left"
+                    data-sal-duration="1500"
+                    data-sal-easing="ease"
+                >
                     <Image fluid={ imagen1.fluid } alt="Primera imagen sobre nosotros" />
                 </ImgDiv1>
-                <ImgDiv2>
+                <ImgDiv2
+                    data-sal="slide-right"
+                    data-sal-duration="1500"
+                    data-sal-easing="ease"
+                >
                     <Image fluid={ imagen2.fluid } alt="Segunda imagen sobre nosotros" />
                 </ImgDiv2>
                 <DivP>

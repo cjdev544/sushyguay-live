@@ -4,12 +4,13 @@ import styled from '@emotion/styled';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import sizes from '../styles/sizes';
+import mq from '../styles/breakPoints';
 
 /**
  *  Styles
  */
 const DivForm = styled.div`
-    width: 70%;
+    width: 80%;
     background-color: #fff;
     border: 1px solid ${ colors.secondary };
     text-align: center;
@@ -29,7 +30,7 @@ const DivForm = styled.div`
         display: block;
         width: 100%;
         margin-bottom: 1rem;
-        :focus {outline: none;box-shadow: none;} 
+        :focus {outline: none;box-shadow: none;}
     }
 
     .success {
@@ -39,6 +40,10 @@ const DivForm = styled.div`
     .fail {
         font-style: italic;
         color: red;        
+    }
+
+    ${mq('min', 'medium')} {
+        width: 55%;
     }
 `
 

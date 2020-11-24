@@ -125,6 +125,9 @@ const ContentMenu = () => {
                     }
                 </MenuFilter>
                 <div 
+                    data-sal="fade"
+                    data-sal-duration="1500"
+                    data-sal-easing="ease"
                     className="container spaceSectionDown"
                     css={ css`
                         display: block;                        

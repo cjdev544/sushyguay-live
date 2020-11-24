@@ -25,7 +25,11 @@ const IndexPlates = () => {
     return (
         <section className="container spaceSectionUp spaceSectionDown">
             <h2 className="title2 text-center">Ofertas de la semana</h2>
-            <Div>
+            <Div
+                data-sal="slide-up"
+                data-sal-duration="1500"
+                data-sal-easing="ease"
+            > 
             {
                 platosEnOferta.map(plate => (
                 <IndexPlate 

@@ -20,9 +20,9 @@ const InputForm = styled.input`
 
 const Btn = styled.button`
         text-transform: uppercase;
-        background-color: ${ colors.accent };
+        background-color: transparent;
         border: 2px solid ${ colors.accent };
-        color: #fff;
+        color: ${ colors.accent };
         padding: .8rem 1.2rem;
         border-radius: 5px;
         cursor: pointer;
@@ -32,9 +32,8 @@ const Btn = styled.button`
         transition: all .4s ease-in-out;
 
         &:hover {
-            background-color: transparent;
-            border: 2px solid ${ colors.accent };
-            color: ${ colors.accent };
+            background-color: ${ colors.accent };
+            color: #fff;
         }
     `
 

@@ -66,7 +66,11 @@ const IndexAbout = () => {
             overflow: hidden;
         `}>
             <ImgBackgroundAbautSection tag="section" fluid={imagenDeFondo.fluid}>
-                <Div>
+                <Div
+                    data-sal="slide-right"
+                    data-sal-duration="1500"
+                    data-sal-easing="ease"
+                >
                     <Image fluid={ imgAbout.fluid } alt="Imagen sobre Nosotros" />
                 </Div>
                 <TextAbout>
