@@ -1,11 +1,11 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import QueryHomePage from "../queries/homePage"
 import Image from 'gatsby-image'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import colors from '../styles/colors'
 import mq from '../styles/breakPoints'
-import Button from './Button'
 
 const Article = styled.article`
     
@@ -63,8 +63,27 @@ const Article = styled.article`
     }
 `
 
-const IndexNewPlate = () => {
+const Btn = styled(Link)`
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid ${ colors.callToAction };
+    padding: .8rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    &.snipcart-add-item { color: ${ colors.callToAction }; }
 
+    &:hover {
+        background-color: ${ colors.callToAction };
+        color: ${ colors.white };
+    }
+`
+
+
+const IndexNewPlate = () => {
+ 
     const { 
         tituloDeSeccion, 
         nombreDelNuevoPlato,
@@ -73,6 +92,10 @@ const IndexNewPlate = () => {
         oferta,
         imagenDelNuevoPlato 
     } = QueryHomePage()
+
+    if(!nombreDelNuevoPlato) {
+        return null
+    }
 
     const image = imagenDelNuevoPlato.fluid
 
@@ -105,9 +128,17 @@ const IndexNewPlate = () => {
                             )
                         }
                     </footer>
-                    <Button 
-                        text={'Agregar al carrito'}
-                    />
+                    <Btn 
+                        to="#"
+                        className="snipcart-add-item"
+                        data-item-id={ nombreDelNuevoPlato }
+                        data-item-price={ oferta ? oferta : precio }
+                        data-item-url="http://localhost:8000/"
+                        data-item-image={ image.src }
+                        data-item-name={ nombreDelNuevoPlato }
+                    >
+                        Agregar al carrito
+                    </Btn>
                 </div>
             </Article>
         </section>

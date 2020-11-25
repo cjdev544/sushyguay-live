@@ -21,6 +21,9 @@ const Div = styled.div`
 const IndexPlates = () => {
 
     const { platosEnOferta } = QueryHomePage()
+    const platos = platosEnOferta.length
+
+    if(platos === 0) return null
 
     return (
         <section className="container spaceSectionUp spaceSectionDown">

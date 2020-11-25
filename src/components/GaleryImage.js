@@ -2,12 +2,10 @@ import React from 'react'
 import Image from 'gatsby-image'
 import { css } from '@emotion/core'
 
-const GaleryImage = ({ image, index }) => {
+const GaleryImage = ({ image, filename, index }) => {
 
-    if(index === 12) return null
-
-    return (
-        <>                           
+    return (                                  
+        index !== 12 && (
             <div 
                 className="img-item"
                 css={ css`
@@ -16,9 +14,9 @@ const GaleryImage = ({ image, index }) => {
                     :hover {transform: scale(1.01)}
                 `}
             >
-                <Image fluid={ image.fluid } alt={`Imagen de galería número ${index}`} className="img-itemImage" />    
-            </div>                      
-        </>
+                <Image fluid={ image.fluid } alt={ image.filename } className="img-itemImage" />    
+            </div> 
+        )                             
     )
 }
 

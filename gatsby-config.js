@@ -8,7 +8,19 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    // `gatsby-plugin-layout`,
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'es'
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `backgrounds`,
+        path: `${__dirname}/src/bg`, // wherever background images are stored
+      },
+    },
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
@@ -34,6 +46,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-react-leaflet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -48,6 +61,13 @@ module.exports = {
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
+    {
+			resolve: 'gatsby-plugin-snipcartv3',
+			options: {
+        apiKey: process.env.SNIPCART_KEY,
+        autopop: true
+			}
+		},
     {
       resolve: `gatsby-source-datocms`,
       options: {

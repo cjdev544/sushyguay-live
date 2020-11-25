@@ -147,7 +147,7 @@ const options = {
             <SRLWrapper options={options}>
                 <ImgContainer className="container spaceSectionDown">
                     {
-                        fotosDeLaGaleria.map((img, index) => (
+                        fotosDeLaGaleria.map((img, index) => (                            
                             <GaleryImage 
                                 key={ img.originalId }
                                 index={ index }

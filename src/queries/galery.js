@@ -15,6 +15,7 @@ const QueryGaleryPage = () => {
                     parrafo
                     fotosDeLaGaleria {
                         originalId
+                        filename
                         fluid {
                             ...GatsbyDatoCmsFluid_tracedSVG
                         }

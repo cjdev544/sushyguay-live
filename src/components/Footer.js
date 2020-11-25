@@ -92,6 +92,24 @@ const Copy = styled.div`
     }
 `
 
+const Btn = styled(Link)`
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid ${ colors.callToAction };
+    padding: .8rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    &.snipcart-summary { color: ${ colors.callToAction }; }
+
+    &:hover {
+        background-color: ${ colors.callToAction };
+        color: ${ colors.white };
+    }
+`
+
 const Footer = () => {
 
     const year = new Date().getFullYear()
@@ -158,10 +176,10 @@ const Footer = () => {
                             >
                                 <FaWhatsapp className="colorLink" />
                             </a>
-                        </div>  
-                        <Button 
-                            text={'Ver Carrito'}
-                        />
+                        </div>
+                        <Btn to="#" className="snipcart-summary snipcart-checkout">
+                            Ver Carrito
+                        </Btn>
                     </div>             
                 </FooterMain>
             </div>

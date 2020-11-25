@@ -1,14 +1,18 @@
 import React from 'react'
 import QueryHomePage from "../queries/homePage"
 import BackgroundImage from 'gatsby-background-image'
+import BackgroundSlider from 'gatsby-image-background-slider'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import Title from './Title'
+import { graphql, useStaticQuery } from 'gatsby'
+import sizes from '../styles/sizes'
+import mq from '../styles/breakPoints'
 
 /**
  *  Styled
  */
-const ImgBackground = styled(BackgroundImage)`
+const ImgBackground = styled.div`
     position: relative;
     width: 100%;
     height: 100vh;
@@ -23,25 +27,90 @@ const ImgBackground = styled(BackgroundImage)`
 const BackgroundPage = () => {
 
     const { imagenDeFondoPaginaInicio: image, nombreDeLaMarca, parrafoDelBanner } = QueryHomePage()
+
+    // const image = useStaticQuery(graphql`
+    //     query {
+    //         backgrounds: allFile (filter: {sourceInstanceName: {eq: "backgrounds"}}){
+    //             nodes {
+    //                 relativePath
+    //                 childImageSharp {
+    //                     fluid (maxWidth: 4000, quality: 100){
+    //                         ...GatsbyImageSharpFluid
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // `)
     
 
     return (
-        <ImgBackground tag="section" fluid={image.fluid}>
-            <div css={ css`
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-            `}>
-                <Title title={ nombreDeLaMarca } />
-                <p css={ css`
-                    text-align: center; 
-                    margin-top: 4rem;
-                    color: #fff;
-                `}>{ parrafoDelBanner }</p>
-            </div>
-        </ImgBackground>
+        // <ImgBackground tag="section" query={image}>
+        //     <div css={ css`
+        //         display: flex;
+        //         flex-direction: column;
+        //         align-items: center;
+        //         justify-content: center;
+        //         height: 100%;
+        //     `}>
+        //         <Title title={ nombreDeLaMarca } />
+        //         <p css={ css`
+        //             text-align: center; 
+        //             margin-top: 4rem;
+        //             color: #fff;
+        //         `}>{ parrafoDelBanner }</p>
+        //     </div>
+        // </ImgBackground>
+        <>
+            <BackgroundSlider 
+                query={useStaticQuery(graphql`
+                    query {
+                        backgrounds: allFile (filter: {sourceInstanceName: {eq: "backgrounds"}}){
+                            nodes {
+                                relativePath
+                                childImageSharp {
+                                    fluid (maxWidth: 4000, quality: 100){
+                                    ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                        }
+                    }
+                `)}
+                initDelay={2} // delay before the first transition (if left at 0, the first image will be skipped initially)
+                transition={4} // transition duration between images
+                duration={8} // how long an image is shown
+                // specify images to include (and their order) according to `relativePath`
+                // images={["dog.jpg", "cat.jpg", "giraffe.jpg", "tasmanian devil.jpg", "gabe.jpg"]} 
+
+                // pass down standard element props
+                style={{
+                    height: "100vh"
+                }} 
+            />
+            <ImgBackground tag="section" query={image}>
+                <div css={ css`
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                `}>
+                    <Title title={ nombreDeLaMarca } />
+                    <p css={ css`
+                        text-align: center; 
+                        margin-top: 4rem;
+                        color: #fff;
+                        font-size: ${ sizes.title3 };
+                        font-style: italic;
+
+                        ${ mq('min', 'medium')} {
+                            width: 60%;
+                        }
+                    `}>{ parrafoDelBanner }</p>
+                </div>
+            </ImgBackground>
+        </>
     )
 }
 
