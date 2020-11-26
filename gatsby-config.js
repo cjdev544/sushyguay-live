@@ -11,6 +11,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: procces.env.GATSBY_GOOGLE_TAG_MANAGER,
+        includeInDevelopment: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
         lang: 'es'
