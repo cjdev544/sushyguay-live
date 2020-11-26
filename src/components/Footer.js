@@ -187,7 +187,15 @@ const Footer = () => {
                 <p>Todos los derechos reervados { nombreDeLaMarca } { year } &copy;</p>
                 <p>Desarrollado por <a href="/">CJDev</a></p>
             </Copy>
-            <CookieConsent />
+            <CookieConsent
+                location="bottom"
+                buttonText="Aceptar"
+                declineButtonText="Negar"
+                cookieName="gatsby-gdpr-google-analytics"
+                expires={150}
+            >
+                Este sitio web utiliza cookies para mejorar la experiencia de usuario
+            </CookieConsent> 
         </footer>
     )
 }

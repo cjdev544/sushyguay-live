@@ -6,7 +6,6 @@ import QueryHomePage from '../queries/homePage'
 const IndexMap = () => {
 
     const { tituloDeMapa, parrafoDeMapa } = QueryHomePage()
-    console.log(parrafoDeMapa)
 
     return (
         <section className="container spaceSectionDown">
