@@ -16,6 +16,7 @@ import {
     FaWhatsapp,
     FaPhone
     } from 'react-icons/fa'
+import CookieConsent from 'react-cookie-consent'
 
 /**
  *  Styles
@@ -186,6 +187,7 @@ const Footer = () => {
                 <p>Todos los derechos reervados { nombreDeLaMarca } { year } &copy;</p>
                 <p>Desarrollado por <a href="/">CJDev</a></p>
             </Copy>
+            <CookieConsent />
         </footer>
     )
 }

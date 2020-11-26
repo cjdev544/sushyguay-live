@@ -17,6 +17,36 @@ module.exports = {
         includeInDevelopment: false,
       },
     },
+    { 
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: [
+          "https://www.google-analytics.com",
+          "https://www.googletagmanager.com",
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID, // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-analytics', // default
+          anonymize: true // default
+        },
+        googleTagManager: {
+          trackingId: process.env.GATSBY_GOOGLE_TAG_MANAGER, // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-tagmanager', // default
+          dataLayerName: 'dataLayer', // default
+        },
+        // facebookPixel: {
+        //   pixelId: 'YOUR_FACEBOOK_PIXEL_ID', // leave empty if you want to disable the tracker
+        //   cookieName: 'gatsby-gdpr-facebook-pixel', // default
+        // },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development']
+      },
+    },
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
@@ -63,8 +93,8 @@ module.exports = {
         name: `Sushi Guay`,
         short_name: `Sushi Guay`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#dedede`,
+        theme_color: `#dedede`,
         display: `minimal-ui`,
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
