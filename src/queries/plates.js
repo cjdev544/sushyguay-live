@@ -8,6 +8,7 @@ const QueryPlates = () => {
             allDatoCmsPlato {
                 nodes {
                     id
+                    slug
                     disponible
                     nombreDelPlato
                     descripcionCorta
@@ -15,7 +16,10 @@ const QueryPlates = () => {
                     precio
                     enOferta
                     imagenesDelPlato {
+                        originalId
+                        filename
                         fluid {
+                            src
                             ...GatsbyDatoCmsFluid_tracedSVG
                         }
                     }

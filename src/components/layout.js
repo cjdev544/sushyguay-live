@@ -5,10 +5,16 @@ import Navbar from './navBar/Navbar'
 
 const Layout = (props) => {
 
+    const snipcart = document.querySelector('.snipcart .snipcart-checkout-transitions-enter')
+
     return (    
         <>
             <Globals />
-            <Navbar />            
+            {
+                !snipcart && (
+                    <Navbar />            
+                ) 
+            }
             {props.children}
             <Footer />
         </>

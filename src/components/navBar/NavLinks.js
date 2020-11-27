@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCartArrowDown } from 'react-icons/fa'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
@@ -67,6 +67,7 @@ const NavLink = styled(Link)`
 `
 
 const NavLinks = () => {
+
     return (
         <>
             <NavLink to={'/'} activeClassName="active">INICIO</NavLink>
@@ -74,18 +75,12 @@ const NavLinks = () => {
             <NavLink to={'/menu'} activeClassName="active">MENÚ</NavLink>            
             <NavLink to={'/galeria'} activeClassName="active">GALERÍA</NavLink>
             <NavLink to={'/contacto'} activeClassName="active">CONTACTO</NavLink>
-            <NavLink to="#" className="snipcart-summary snipcart-checkout">
+            <NavLink 
+                to="#"
+                className="snipcart-checkout"
+            >
                 <FaCartArrowDown />
-            </NavLink>  
-             {/* <button class="snipcart-add-item"
-                data-item-id="starry-night"
-                data-item-price="79.99"
-                data-item-url="/paintings/starry-night"
-                data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-                data-item-image="/assets/images/starry-night.jpg"
-                data-item-name="The Starry Night">
-                Add to cart
-              </button> */}
+            </NavLink> 
         </>
     )
 }

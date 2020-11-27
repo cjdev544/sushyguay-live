@@ -61,13 +61,23 @@ module.exports = {
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
+    // {
+		// 	resolve: 'gatsby-plugin-snipcartv3',
+		// 	options: {
+    //     apiKey: process.env.SNIPCART_KEY,
+    //     autopop: true
+		// 	}
+    // },
     {
-			resolve: 'gatsby-plugin-snipcartv3',
-			options: {
-        apiKey: process.env.SNIPCART_KEY,
-        autopop: true
-			}
-		},
+      resolve: `gatsby-plugin-snipcart-advanced`,
+      options: {
+          version: '3.0.15',
+          publicApiKey: process.env.SNIPCART_KEY,
+          defaultLang: 'es',
+          currency: 'eur',
+          openCartOnAdd: true
+      }
+  },
     {
       resolve: `gatsby-source-datocms`,
       options: {

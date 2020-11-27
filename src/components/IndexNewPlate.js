@@ -86,7 +86,7 @@ const IndexNewPlate = () => {
  
     const { 
         tituloDeSeccion, 
-        nombreDelNuevoPlato,
+        nombreDelNuevoPlato, 
         descripcionDelPlato,
         precio,
         oferta,
@@ -133,7 +133,8 @@ const IndexNewPlate = () => {
                         className="snipcart-add-item"
                         data-item-id={ nombreDelNuevoPlato }
                         data-item-price={ oferta ? oferta : precio }
-                        data-item-url="http://localhost:8000/"
+                        data-item-description={ descripcionDelPlato }
+                        data-item-url="http://localhost:8000/menu"
                         data-item-image={ image.src }
                         data-item-name={ nombreDelNuevoPlato }
                     >

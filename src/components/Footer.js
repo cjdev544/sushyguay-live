@@ -177,7 +177,7 @@ const Footer = () => {
                                 <FaWhatsapp className="colorLink" />
                             </a>
                         </div>
-                        <Btn to="#" className="snipcart-summary snipcart-checkout">
+                        <Btn to="#" className="snipcart-checkout">
                             Ver Carrito
                         </Btn>
                     </div>             

@@ -52,7 +52,7 @@ const ContentMenu = () => {
 
     // Filter plates actives
     const platesActive = dataPlates.filter(plate => plate.disponible)
-
+    
     // Filter categories active
     let categoryActive = [];
     dataCategories.forEach(category => {
@@ -60,13 +60,13 @@ const ContentMenu = () => {
 
         if(catAct) categoryActive.push(category.categoria)
     });
-
+    
     // State
     const [filter, setFilter] = useState({
         plates: platesActive,
         categories: categoryActive
     })
-
+    
 
    // onClick filters
    const filterSelector = (e) => {
@@ -124,31 +124,28 @@ const ContentMenu = () => {
                         ))
                     }
                 </MenuFilter>
-                <div 
-                    data-sal="fade"
-                    data-sal-duration="1500"
-                    data-sal-easing="ease"
-                    className="container spaceSectionDown"
-                    css={ css`
-                        display: block;                        
-
-                        ${mq('min', 'small')} {
-                            display: flex;
-                            justify-content: space-between;
-                            flex-wrap: wrap;
-                        }
-                    `}
-                >
-                    {
-                        filter.plates.map(plate => (
-                            <PlatesMenu 
-                                key={ plate.id }
-                                plates={ plate }
-                            />
-                        ))
-                    }
-                </div>
             </nav>
+            <div 
+                className="container spaceSectionDown"
+                css={ css`
+                    display: block;                        
+
+                    ${mq('min', 'small')} {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+                `}
+            >
+                {   
+                    filter.plates.map(plate => (                        
+                        <PlatesMenu 
+                            key={ plate.id }
+                            plates={ plate }
+                        />
+                    ))
+                }
+            </div>
         </>
     )
 }
