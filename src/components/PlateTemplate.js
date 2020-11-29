@@ -38,12 +38,21 @@ const DivImage = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
+.imgPlate { 
+    box-shadow: -4px 4px 2px ${ colors.accent };
+    object-fit: cover;
+    object-position: center center;
+}
+
     ${ mq('max', 'medium')} {
         grid-template-columns: repeat(2, 1fr);
     }
     ${ mq('max', 'small')} {
-        display: flex;
-        flex-wrap: wrap;
+        display: block;
+
+        .imgPlate {
+            margin: 2rem;
+        }
     }
 
     .price {
@@ -92,8 +101,6 @@ const PlateTemplate = ({ data }) => {
         imagenesDelPlato
     } = data.allDatoCmsPlato.nodes[0]
 
-    console.log(imagenesDelPlato)
-
     return (
         <Layout>
             <OtherHeader 
@@ -130,10 +137,12 @@ const PlateTemplate = ({ data }) => {
                         </Btn>
                     </div>
                     {
-                        imagenesDelPlato.map(image => (
-                            <div className="imgPlate">
-                                <Image    
-                                    key={ image.filename}                                 
+                        imagenesDelPlato.map((image, index) => (
+                            <div 
+                                key={ index }  
+                                className="imgPlate"
+                            >
+                                <Image                                        
                                     fluid={ image.fluid } 
                                     alt={ image.filename } 
                                 />

@@ -43,7 +43,7 @@ const Article = styled.article`
             box-shadow: 4px -4px 2px ${ colors.accent };
             grid-column: 1/9;
             grid-row: 4/11;
-            z-index: 10;
+            z-index: 1;
         }
 
     }

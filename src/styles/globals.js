@@ -106,6 +106,9 @@ const Globals = () => {
                     .spaceTitle {
                         margin-bottom: ${ spaces.spaceTitle };
                     }
+                    .backgroundNavegation {
+                        background: linear-gradient(180deg, rgba(0,0,0,.8) 1%, rgba(0,0,0,.8) 70%,  rgba(0,0,0,.5) 100%);
+                    }
                 `}
             /> 
         </>

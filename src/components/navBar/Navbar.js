@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavLinks from './NavLinks'
 import Logo from './Logo'
 import styled from '@emotion/styled'
@@ -11,7 +11,6 @@ import mq from '../../styles/breakPoints'
 const Navegation = styled.nav`
     height: 12vh;
     display: flex;
-    background: linear-gradient(180deg, rgba(0,0,0,.8) 1%, rgba(0,0,0,.8) 70%,  rgba(0,0,0,.5) 100%);
     position: fixed;
     top: 0;
     left: 0;
@@ -20,7 +19,7 @@ const Navegation = styled.nav`
     text-transform: uppercase;
     margin: 0 auto;
     padding: 0;
-    z-index: 1000;
+    z-index: 10;
     align-self: center;
 
     ${mq('max', 'medium')} {
@@ -102,7 +101,7 @@ const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false)
 
     return (
-        <Navegation>
+        <Navegation id="navegation">
             <Logo />
             <Toggle 
                 navbarOpen={ navbarOpen }
