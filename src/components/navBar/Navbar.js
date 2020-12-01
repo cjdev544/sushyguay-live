@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import NavLinks from './NavLinks'
-import Logo from './Logo'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
+import Logo from './Logo'
+import NavLinks from './NavLinks'
 import color from '../../styles/colors'
 import mq from '../../styles/breakPoints'
 

@@ -7,6 +7,7 @@ const QueryMenuPage = () => {
         query {
             allDatoCmsPaginaMenu {
                 nodes {
+                    tituloDePagina
                     imagenDePortada {
                         fluid {
                             ...GatsbyDatoCmsFluid_tracedSVG

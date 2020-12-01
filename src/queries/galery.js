@@ -7,6 +7,7 @@ const QueryGaleryPage = () => {
         query {
             allDatoCmsPaginaGalery {
                 nodes {
+                    tituloDePagina
                     imagenDePortada {
                         fluid {
                             ...GatsbyDatoCmsFluid_tracedSVG

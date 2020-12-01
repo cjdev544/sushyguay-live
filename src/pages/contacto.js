@@ -1,13 +1,13 @@
 import React from 'react'
-import Layout from '../components/layout'
-import OtherHeader from '../components/OtherHeader'
+import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import QueryContactPage from '../queries/contact'
 import QueryFooter from '../queries/footer'
-import ContactForm from '../components/ContactForm'
-import { css } from '@emotion/core'
-import fonts from '../styles/fonts'
-import styled from '@emotion/styled'
+import Layout from '../components/layout'
+import OtherHeader from '../components/OtherHeader'
 import ContentUnderHero from '../components/ContentUnderHero'
+import ContactForm from '../components/ContactForm'
+import fonts from '../styles/fonts'
 import mq from '../styles/breakPoints'
 import colors from '../styles/colors'
 import spaces from '../styles/spaces'
@@ -19,6 +19,7 @@ import {
     FaWhatsapp,
     FaPhone
     } from 'react-icons/fa'
+import InfoMap from '../components/InfoMap'
 
 
 /**
@@ -53,7 +54,7 @@ const Div = styled.div`
 const Contacto = () => {
 
     const data = QueryContactPage()
-    const { imagenDePortada, parrafoPrincipal } = data
+    const { tituloDePagina, imagenDePortada, parrafoPrincipal, tituloDeMapa } = data
     
     const {
         direccion,
@@ -69,12 +70,54 @@ const Contacto = () => {
         <Layout>
             <OtherHeader 
                 hero={ imagenDePortada }
-                title={ "Contactanos" }
+                title={ tituloDePagina }
             />
             <main>
                 <ContentUnderHero 
                     parrafoPrincipal={ parrafoPrincipal}
                 /> 
+                
+                {/* ********* MAP ********* */}
+                <section 
+                    className="container"
+                    css={ css` 
+                        text-align: center;
+                        ${mq('min', 'medium')} {
+                            width: 70%;
+                        }
+                        ${mq('min', 'small')} {
+                            width: 100%;
+                        }
+                    `}
+                >
+                    <h3 
+                        css={ css`
+                                margin-top: 0;
+                                color: ${ colors.accent };
+                                font-family: ${ fonts.secondFont };
+
+                                ${mq('max', 'small')} {
+                                    margin-top: ${ spaces.spaceTitle };
+                                }
+                            `}
+                        className="title2"
+                            
+                    >
+                        { tituloDeMapa }
+                    </h3>
+                </section>
+                <div 
+                    className="container spaceSectionDown"
+                    css={ css` 
+                        height: 350px;
+                        ${mq('min', 'medium')} {
+                            width: 70%;
+                        }
+                    `}
+                >
+                    <InfoMap />
+                </div>
+
                 <div
                     className="container spaceSectionDown"
                     css={ css`

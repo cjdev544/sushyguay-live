@@ -5,6 +5,7 @@ import IndexPlates from "../components/IndexPlates"
 import SubscribeForm from "../components/SubscribeForm"
 import IndexAbout from "../components/IndexAbout"
 import IndexNewPlate from "../components/IndexNewPlate"
+import IndexMap from "../components/IndexMap"
 
 const IndexPage = () => {
 
@@ -16,6 +17,7 @@ const IndexPage = () => {
         <SubscribeForm />
         <IndexAbout />
         <IndexNewPlate />
+        <IndexMap />
       </main>
     </Layout>
   )

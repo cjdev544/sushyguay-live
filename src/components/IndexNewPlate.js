@@ -83,21 +83,24 @@ const Btn = styled(Link)`
 
 
 const IndexNewPlate = () => {
+
+    const { platoEnPromociN } = QueryHomePage()
  
     const { 
         tituloDeSeccion, 
-        nombreDelNuevoPlato, 
-        descripcionDelPlato,
+        nombreDelPlato, 
+        descripcionLarga,
+        descripcionCorta,
         precio,
-        oferta,
-        imagenDelNuevoPlato 
-    } = QueryHomePage()
+        enOferta,
+        imagenesDelPlato
+    } = platoEnPromociN
 
-    if(!nombreDelNuevoPlato) {
+    if(!nombreDelPlato) {
         return null
     }
 
-    const image = imagenDelNuevoPlato.fluid
+    const image = imagenesDelPlato[0]
 
     return (
         <section className="container spaceSectionDown">
@@ -109,18 +112,18 @@ const IndexNewPlate = () => {
                     data-sal-duration="1500"
                     data-sal-easing="ease"
                 >
-                    <Image fluid={ image } alt={ nombreDelNuevoPlato } />
+                    <Image fluid={ image.fluid } alt={ nombreDelPlato } />
                 </div>
                 <div className="divPositionNewPlate">
-                    <h3 className="title3">{ nombreDelNuevoPlato }</h3>
-                    <p>{ descripcionDelPlato }</p>
+                    <h3 className="title3">{ nombreDelPlato }</h3>
+                    <p>{ descripcionLarga }</p>
                     <footer>
                         {
-                            oferta 
+                            enOferta 
                             ? (
                                 <>
                                     <p css={ css`text-decoration: line-through`}>Precio: { precio } €</p>
-                                    <p>Oferta: <span>{ oferta } €</span></p>
+                                    <p>enOferta: <span>{ enOferta } €</span></p>
                                 </>
                             )
                             : (
@@ -131,12 +134,12 @@ const IndexNewPlate = () => {
                     <Btn 
                         to="#"
                         className="snipcart-add-item"
-                        data-item-id={ nombreDelNuevoPlato }
-                        data-item-price={ oferta ? oferta : precio }
-                        data-item-description={ descripcionDelPlato }
+                        data-item-id={ nombreDelPlato }
+                        data-item-price={ enOferta ? enOferta : precio }
+                        data-item-description={ descripcionCorta }
                         data-item-url="http://localhost:8000/menu"
                         data-item-image={ image.src }
-                        data-item-name={ nombreDelNuevoPlato }
+                        data-item-name={ nombreDelPlato }
                     >
                         Agregar al carrito
                     </Btn>

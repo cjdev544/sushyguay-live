@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { css } from '@emotion/core'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
+import QueryHomePage from '../queries/homePage'
+import QueryFooter from '../queries/footer'
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
 import sizes from '../styles/sizes'
-import Button from './Button'
-import QueryFooter from '../queries/footer'
-import QueryHomePage from '../queries/homePage'
 import mq from '../styles/breakPoints'
 import { 
     FaMapMarkerAlt,

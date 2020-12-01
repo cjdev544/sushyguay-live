@@ -20,14 +20,14 @@ const Div = styled.div`
 
 const IndexPlates = () => {
 
-    const { platosEnOferta } = QueryHomePage()
+    const { tituloOfertas, platosEnOferta } = QueryHomePage()
     const platos = platosEnOferta.length
 
     if(platos === 0) return null
 
     return (
         <section className="container spaceSectionUp spaceSectionDown">
-            <h2 className="title2 text-center">Ofertas de la semana</h2>
+            <h2 className="title2 text-center">{ tituloOfertas }</h2>
             <Div
                 data-sal="slide-up"
                 data-sal-duration="1500"

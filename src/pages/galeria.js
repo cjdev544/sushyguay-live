@@ -7,13 +7,13 @@ import QueryGaleryPage from '../queries/galery'
 const Galeria = () => {
     
     const data = QueryGaleryPage()
-    const { imagenDePortada } = data 
+    const { tituloDePagina, imagenDePortada } = data 
 
     return (
         <Layout>
             <OtherHeader 
                 hero={ imagenDePortada }
-                title={ "Galería" }
+                title={ tituloDePagina }
             />
             <main>
                 <ContentGalery />

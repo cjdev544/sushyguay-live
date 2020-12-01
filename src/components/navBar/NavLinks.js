@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { FaCartArrowDown } from 'react-icons/fa'
+import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { FaCartArrowDown } from 'react-icons/fa'
 import font from '../../styles/fonts'
 import colors from '../../styles/colors'
 

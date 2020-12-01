@@ -1,11 +1,10 @@
 import React from 'react'
-import QueryHomePage from "../queries/homePage"
-import BackgroundImage from 'gatsby-background-image'
+import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundSlider from 'gatsby-image-background-slider'
+import QueryHomePage from "../queries/homePage"
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import Title from './Title'
-import { graphql, useStaticQuery } from 'gatsby'
 import sizes from '../styles/sizes'
 import mq from '../styles/breakPoints'
 
@@ -28,39 +27,7 @@ const BackgroundPage = () => {
 
     const { imagenDeFondoPaginaInicio: image, nombreDeLaMarca, parrafoDelBanner } = QueryHomePage()
 
-    // const image = useStaticQuery(graphql`
-    //     query {
-    //         backgrounds: allFile (filter: {sourceInstanceName: {eq: "backgrounds"}}){
-    //             nodes {
-    //                 relativePath
-    //                 childImageSharp {
-    //                     fluid (maxWidth: 4000, quality: 100){
-    //                         ...GatsbyImageSharpFluid
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // `)
-    
-
     return (
-        // <ImgBackground tag="section" query={image}>
-        //     <div css={ css`
-        //         display: flex;
-        //         flex-direction: column;
-        //         align-items: center;
-        //         justify-content: center;
-        //         height: 100%;
-        //     `}>
-        //         <Title title={ nombreDeLaMarca } />
-        //         <p css={ css`
-        //             text-align: center; 
-        //             margin-top: 4rem;
-        //             color: #fff;
-        //         `}>{ parrafoDelBanner }</p>
-        //     </div>
-        // </ImgBackground>
         <>
             <BackgroundSlider 
                 query={useStaticQuery(graphql`

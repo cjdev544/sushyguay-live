@@ -9,6 +9,7 @@ import mq from '../styles/breakPoints'
 import { css } from '@emotion/core'
 import sizes from '../styles/sizes'
 import colors from '../styles/colors'
+import fonts from '../styles/fonts'
 
 export const query = graphql`
     query($slug: String!) {
@@ -149,6 +150,26 @@ const PlateTemplate = ({ data }) => {
                             </div>
                         ))
                     }
+                    <Link 
+                        to={'/menu'}
+                        css={ css`
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-family: ${ fonts.secondFont };
+                            font-size: ${ sizes.title3 };
+                            background-color: ${ colors.secondary };
+                            text-decoration: none;
+                            transition: all .4s ease-in-out;
+
+                            span {
+                                font-size: 4rem;
+                                margin-right: 1rem;
+                            }
+
+                            :hover { color: #000; }
+                        `}
+                    ><span>&#x2ba8;</span> Regresar al Menú</Link>
                 </DivImage> 
             </main>
         </Layout>

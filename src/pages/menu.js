@@ -7,13 +7,13 @@ import ContentMenu from '../components/ContentMenu'
 const Menu = () => {
 
     const data = QueryMenuPage()
-    const { imagenDePortada } = data
+    const { tituloDePagina, imagenDePortada } = data
 
     return (
         <Layout>
             <OtherHeader 
                 hero={ imagenDePortada }
-                title={ "Nuestro Menú" }
+                title={ tituloDePagina }
             />
             <main>
                 <ContentMenu />

@@ -7,12 +7,14 @@ const QueryContactPage = () => {
         query {
             allDatoCmsPaginaContacto {
                 nodes {
+                    tituloDePagina
                     imagenDePortada {
                         fluid {
                             ...GatsbyDatoCmsFluid_tracedSVG
                         }
                     }
                     parrafoPrincipal
+                    tituloDeMapa
                 }
             }
         }

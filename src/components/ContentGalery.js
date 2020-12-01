@@ -1,13 +1,17 @@
 import React from 'react'
-import QueryGaleryPage from '../queries/galery'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
+import  SimpleReactLightbox from 'simple-react-lightbox'
+import { SRLWrapper } from 'simple-react-lightbox'
+import { FaInstagram } from 'react-icons/fa'
+import QueryGaleryPage from '../queries/galery'
+import QueryFooter from '../queries/footer'
 import ContentUnderHero from './ContentUnderHero'
 import GaleryImage from './GaleryImage'
 import mq from '../styles/breakPoints'
-import  SimpleReactLightbox from 'simple-react-lightbox'
-import { SRLWrapper } from 'simple-react-lightbox'
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
+import sizes from '../styles/sizes'
 
 /**
  *  Styles
@@ -111,6 +115,8 @@ const ContentGalery = () => {
 
     const { parrafo, fotosDeLaGaleria } = QueryGaleryPage()
 
+    const { paginaDeInstagram } = QueryFooter()
+
 const options = {    
     buttons: {
         backgroundColor: colors.accent,
@@ -122,8 +128,6 @@ const options = {
         captionFontFamily: fonts.firstFont,
         captionFontSize: '20px',
         captionFontStyle: 'italic',
-        // captionFontWeight: 'inherit',
-        // captionTextTransform: 'inherit',
         showCaption: true
     },
     translations: {
@@ -157,6 +161,23 @@ const options = {
                     }
                 </ImgContainer>
             </SRLWrapper>
+            <p className="container spaceSectionDown"> Para ver más imagenes siguenos en
+                <a 
+                    href={ paginaDeInstagram } 
+                    target="_blank"
+                    rel="noreferrer" 
+                    aria-label="Instagram"
+                    css={ css`
+                        margin-left: 1rem;
+                        font-family: ${ fonts.secondFont };
+                        font-size: ${ sizes.title3 };
+                        transition: all .4s ease-in-out;
+                        :hover { color: #000; }
+                    `}
+                >
+                    Instagram <FaInstagram className="colorLink" />
+                </a>
+            </p>
         </SimpleReactLightbox>
     )
 }

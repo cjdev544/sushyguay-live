@@ -8,6 +8,7 @@ const QueryHomePage = () => {
           nodes {
             nombreDeLaMarca
             parrafoDelBanner
+            tituloOfertas
             platosEnOferta {
               id
               nombreDelPlato
@@ -31,15 +32,24 @@ const QueryHomePage = () => {
               }
             }
             tituloDeSeccion
-            nombreDelNuevoPlato
-            descripcionDelPlato
-            precio
-            oferta
-            imagenDelNuevoPlato {
-              fluid {
-                ...GatsbyDatoCmsFluid_tracedSVG
-                src
+            platoEnPromociN {
+              nombreDelPlato
+              descripcionLarga
+              descripcionCorta
+              precio
+              enOferta
+              imagenesDelPlato {
+                fluid {
+                  ...GatsbyDatoCmsFluid_tracedSVG
+                  src
+                }
               }
+            }
+            tituloDeMapa
+            parrafoDeMapa
+            coordenadasParaMapa {
+              latitude
+              longitude
             }
           }
         }

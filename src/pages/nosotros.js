@@ -7,13 +7,13 @@ import QueryAboutPage from '../queries/aboutPage'
 const Nosotros = () => {
 
     const data = QueryAboutPage()
-    const { imagenDePortada } = data
+    const { tituloDePagina, imagenDePortada } = data
 
     return (
         <Layout>
             <OtherHeader 
                 hero={ imagenDePortada }
-                title={ "Sobre Nosotros" }
+                title={ tituloDePagina }
             />
             <main>
                 <AboutContent 
