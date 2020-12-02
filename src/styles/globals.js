@@ -1,7 +1,7 @@
 import React from 'react'
-import { css, Global } from '@emotion/core'
 import { Helmet } from 'react-helmet'
 import emotionNormalize from 'emotion-normalize'
+import { css, Global } from '@emotion/core'
 import colors from '../styles/colors'
 import font from '../styles/fonts'
 import size from '../styles/sizes'
@@ -14,7 +14,6 @@ const Globals = () => {
            <Helmet>
                 <title>Sushi Guay</title>
                 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Satisfy&display=swap" rel="stylesheet"/>
-                <link href="dist/hamburgers.css" rel="stylesheet"/>
             </Helmet>
 
             <Global 

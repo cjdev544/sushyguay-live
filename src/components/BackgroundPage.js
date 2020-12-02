@@ -25,7 +25,7 @@ const ImgBackground = styled.div`
 
 const BackgroundPage = () => {
 
-    const { imagenDeFondoPaginaInicio: image, nombreDeLaMarca, parrafoDelBanner } = QueryHomePage()
+    const { imagenDeFondoPaginaInicio: nombreDeLaMarca, parrafoDelBanner } = QueryHomePage()
 
     return (
         <>
@@ -37,7 +37,7 @@ const BackgroundPage = () => {
                                 relativePath
                                 childImageSharp {
                                     fluid (maxWidth: 4000, quality: 100){
-                                    ...GatsbyImageSharpFluid
+                                        ...GatsbyImageSharpFluid_tracedSVG 
                                     }
                                 }
                             }
@@ -55,7 +55,7 @@ const BackgroundPage = () => {
                     height: "100vh"
                 }} 
             />
-            <ImgBackground tag="section" query={image}>
+            <ImgBackground>
                 <div css={ css`
                     display: flex;
                     flex-direction: column;
