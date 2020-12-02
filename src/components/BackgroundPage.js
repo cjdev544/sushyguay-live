@@ -25,7 +25,9 @@ const ImgBackground = styled.div`
 
 const BackgroundPage = () => {
 
-    const { imagenDeFondoPaginaInicio: nombreDeLaMarca, parrafoDelBanner } = QueryHomePage()
+    const data = QueryHomePage()
+    const { nombreDeLaMarca, parrafoDelBanner } = data
+    console.log(data) 
 
     return (
         <>
