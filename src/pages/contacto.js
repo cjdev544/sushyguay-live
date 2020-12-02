@@ -115,7 +115,10 @@ const Contacto = () => {
                         }
                     `}
                 >
-                    <InfoMap />
+                    {
+                        typeof window !== 'undefined' &&
+                            <InfoMap />
+                    }
                 </div>
 
                 <div

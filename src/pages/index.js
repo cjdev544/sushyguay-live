@@ -17,7 +17,10 @@ const IndexPage = () => {
         <SubscribeForm />
         <IndexAbout />
         <IndexNewPlate />
-        <IndexMap />
+        {
+          typeof window !== 'undefined' &&
+            <IndexMap />
+        }
       </main>
     </Layout>
   )

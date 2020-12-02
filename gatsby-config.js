@@ -1,6 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -61,13 +62,6 @@ module.exports = {
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
-    // {
-		// 	resolve: 'gatsby-plugin-snipcartv3',
-		// 	options: {
-    //     apiKey: process.env.SNIPCART_KEY,
-    //     autopop: true
-		// 	}
-    // },
     {
       resolve: `gatsby-plugin-snipcart-advanced`,
       options: {
@@ -81,7 +75,8 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: process.env.CMDDATO_ACCESS_TOKEN,
+        apiToken: process.env.DATO_API_TOKEN,
+        previewMode: false,
         disableLiveReload: false
       }
     },

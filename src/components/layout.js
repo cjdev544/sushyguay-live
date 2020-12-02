@@ -5,19 +5,22 @@ import Navbar from './navBar/Navbar'
 
 const Layout = (props) => {
     
-    window.onscroll = function() {
+    typeof window !== 'undefined' && (
         
-        let navegation
-        let scrollY = window.scrollY
-        if(scrollY >= 200) {
-            if(!navegation) navegation = document.getElementById('navegation')
-            navegation.classList.add('backgroundNavegation')
+        window.onscroll = function() {
+        
+            let navegation
+            let scrollY = window.scrollY
+            if(scrollY >= 200) {
+                if(!navegation) navegation = document.getElementById('navegation')
+                navegation.classList.add('backgroundNavegation')
+            }
+            else {
+                if(!navegation) navegation = document.getElementById('navegation')
+                navegation.classList.remove('backgroundNavegation')
+            }
         }
-        else {
-            if(!navegation) navegation = document.getElementById('navegation')
-            navegation.classList.remove('backgroundNavegation')
-        }
-    }
+    )
 
     return (    
         <>
