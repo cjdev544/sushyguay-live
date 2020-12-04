@@ -83,7 +83,11 @@ const IndexPlate = ({ plate }) => {
     const image = imagenesDelPlato[0].fluid
 
     return (
-        <Article>
+        <Article
+            data-sal="slide-up"
+            data-sal-duration="1500"
+            data-sal-easing="ease"
+        >
             <Image 
                 fluid={ image } 
                 alt={ nombreDelPlato }                      

@@ -1,10 +1,18 @@
 import React from 'react'
 import BackgroundPage from './BackgroundPage'
+import BackgroundMobil from './BackgroundMobil'
 
 const Header = () => {
+
+    const widthWindow = window.screen.width
+
     return (
         <header>
-            <BackgroundPage />
+            {
+                widthWindow < 768 
+                    ?   <BackgroundMobil />
+                    :   <BackgroundPage />
+            }
         </header>
     )
 }

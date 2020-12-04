@@ -10,6 +10,7 @@ import Title from './Title'
 const ImgBackgroundAbaut = styled(BackgroundImage)`
         position: relative;
         width: 100%;
+        min-height: 30rem;
         height: 65vh;
         opacity: 1 !important;
         background: linear-gradient(180deg, rgba(0,0,0,.55) 5%,  rgba(0,0,0,.75) 100%);    

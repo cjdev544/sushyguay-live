@@ -27,7 +27,6 @@ const BackgroundPage = () => {
 
     const data = QueryHomePage()
     const { nombreDeLaMarca, parrafoDelBanner } = data
-    console.log(data) 
 
     return (
         <>

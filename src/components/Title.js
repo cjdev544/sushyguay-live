@@ -6,6 +6,7 @@ const Title = ({title}) => {
     return (
         <h1 css={ css`        
             text-shadow: -2px 2px 3px ${ colors.accent };
+            text-align: center;
         `}>
             { title }
         </h1>

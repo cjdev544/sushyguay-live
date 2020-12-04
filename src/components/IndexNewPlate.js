@@ -8,6 +8,7 @@ import colors from '../styles/colors'
 import mq from '../styles/breakPoints'
 
 const Article = styled.article`
+    overflow-x: hidden;
     
     h3 { 
         color: ${ colors.accent }; 
@@ -106,12 +107,7 @@ const IndexNewPlate = () => {
         <section className="container spaceSectionDown">
             <h2 className="title2 text-center">{ tituloDeSeccion }</h2>
             <Article>
-                <div 
-                    className='divImg'
-                    data-sal="slide-left"
-                    data-sal-duration="1500"
-                    data-sal-easing="ease"
-                >
+                <div>
                     <Image fluid={ image.fluid } alt={ nombreDelPlato } />
                 </div>
                 <div className="divPositionNewPlate">

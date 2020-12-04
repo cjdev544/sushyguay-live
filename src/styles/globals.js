@@ -28,11 +28,11 @@ const Globals = () => {
                     }
 
                     html {
-                        font-size: 62.5%;
-                        font-family: ${font.firstFont};
+                        font-size: 62.5%;                        
+                        overflow-x: hidden; 
                     }
                     body {
-                        font-family: serif;
+                        font-family: ${font.firstFont};
                         font-size: ${size.base};
                         background-color: ${ colors.primary };
                     }

@@ -11,7 +11,10 @@ const IndexPage = () => {
 
   return  (
     <Layout>
-      <Header />
+      {
+        typeof window !== 'undefined' &&
+          <Header />
+      }
       <main>
         <IndexPlates />
         <SubscribeForm />

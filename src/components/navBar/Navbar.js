@@ -27,12 +27,9 @@ const Navegation = styled.nav`
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 8vh;
+        width: 100vw;
+        height: 5rem;
         top: 0;
-        left: 0;
-        right: 0;
-        left: 0;
     }
 `
 const Toggle = styled.div`
@@ -47,6 +44,7 @@ const Toggle = styled.div`
 `
 const NavBox = styled.div`
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
     justify-content: flex-end;
     align-items: center;
@@ -60,7 +58,7 @@ const NavBox = styled.div`
         /* Color Hamburger background menu */
         background: rgba(0,0,0,.95);
         transition: all 0.3s ease-in;
-        top: 8vh;
+        top: 5rem;
         left: ${props => (props.open ? "-100%" : "0")};
     }
 `

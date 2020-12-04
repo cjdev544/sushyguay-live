@@ -6,6 +6,11 @@ const QueryHomePage = () => {
     query {
         allDatoCmsPaginaDeInicio {
           nodes {
+            imagenDeP {
+              fluid {
+                ...GatsbyDatoCmsFluid_tracedSVG
+              }
+            }
             nombreDeLaMarca
             parrafoDelBanner
             tituloOfertas
