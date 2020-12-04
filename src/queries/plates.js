@@ -18,7 +18,7 @@ const QueryPlates = () => {
                     imagenesDelPlato {
                         originalId
                         filename
-                        fluid {
+                        fluid (maxWidth: 100){
                             src
                             ...GatsbyDatoCmsFluid_tracedSVG
                         }

@@ -37,8 +37,8 @@ const BackgroundPage = () => {
                             nodes {
                                 relativePath
                                 childImageSharp {
-                                    fluid (maxWidth: 4000, quality: 100){
-                                        ...GatsbyImageSharpFluid_tracedSVG 
+                                    fluid (maxWidth: 1200, quality: 100){
+                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                     }
                                 }
                             }

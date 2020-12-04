@@ -9,7 +9,7 @@ const QueryAboutPage = () => {
                 nodes {
                     tituloDePagina
                     imagenDePortada {
-                        fluid {
+                        fluid (maxWidth: 1200){
                             ...GatsbyDatoCmsFluid_tracedSVG
                         }
                     }
