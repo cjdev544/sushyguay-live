@@ -16,6 +16,7 @@
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-manifest": "^2.4.37",
+    "gatsby-plugin-netlify": "^2.7.0",
     "gatsby-plugin-offline": "^3.2.38",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-react-leaflet": "^2.0.13",
@@ -36,6 +37,7 @@
     "simple-react-lightbox": "^3.3.4-2"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.17",
     "prettier": "2.1.2"
   },
   "keywords": [

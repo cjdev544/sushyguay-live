@@ -47,14 +47,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-react-leaflet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Sushi Guay`,
+        short_name: `Sushi Guay`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -65,13 +64,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-snipcart-advanced`,
       options: {
-          version: '3.0.15',
-          publicApiKey: process.env.SNIPCART_KEY,
-          defaultLang: 'es',
-          currency: 'eur',
-          openCartOnAdd: true
+        version: '3.0.15',
+        publicApiKey: process.env.SNIPCART_KEY,
+        defaultLang: 'es',
+        currency: 'eur',
+        openCartOnAdd: true
       }
-  },
+    },
     {
       resolve: `gatsby-source-datocms`,
       options: {
@@ -85,9 +84,17 @@ module.exports = {
       options: {
         endpoint: process.env.MAILCHIMP_ENDPOINT
       }
-    }
+    },
+    `gatsby-plugin-react-leaflet`,
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
+    `gatsby-plugin-netlify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

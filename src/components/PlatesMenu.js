@@ -67,6 +67,7 @@ const PlateLink = styled(Link)`
 `
 
 const PlatesMenu = ({ plates }) => {
+    console.log(plates)
 
     const {
         slug,
