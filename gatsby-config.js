@@ -4,6 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://gallant-jang-4c6625.netlify.app/`,
     title: `Sushi Guay`,
     description: `Web de comida con comercio integrado`,
     author: `CjDev`,
@@ -93,6 +94,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
