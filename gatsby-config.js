@@ -61,6 +61,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `satisfy`,
+          `cormorant garamond\:300,300i,400,400i,700,700i` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
           threshold: 0.4, // Percentage of an element's area that needs to be visible to launch animation
