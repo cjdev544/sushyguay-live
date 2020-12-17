@@ -4,11 +4,34 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import fonts from '../styles/fonts'
 import colors from '../styles/colors'
+import sizes from '../styles/sizes';
 
 
 /**
  *  Styles
  */
+const Form = styled.form`
+    span { display: block };
+    
+    .success {
+        font-size: ${ sizes.title3 };
+        background-color: ${ colors.callToAction };
+        color: ${ colors.white }; 
+        padding: 1rem;
+        margin: 0.5rem;       
+        display: block;
+        font-style: italic;
+    }
+    .fail {
+        font-size: ${ sizes.title3 };
+        color: red;
+        padding: 1rem;
+        margin: 0.5rem;
+        display: block;
+        font-style: italic;       
+    }
+`
+
 const InputForm = styled.input`
     font-family: ${ fonts.firstFont };
     line-height: 3rem;
@@ -44,11 +67,12 @@ const ContactForm = () => {
     const [state, setState] = useState({
         name: '',
         email: '',
+        phone: '',
         message: '',
         status: '',
         msg: ''
     })
-    const { name, email, message, status, msg } = state
+    const { name, email, phone, message, status, msg } = state
 
     const onChange = e => {
         setState({
@@ -75,7 +99,6 @@ const ContactForm = () => {
 
         // Netlify    
         const form = e.target
-        console.log(e)
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -88,6 +111,7 @@ const ContactForm = () => {
             setState({
                 name: '',
                 email: '',
+                phone: '',
                 message: '',
                 status: 'success',
                 msg: 'El mensaje fue enviado con exito'
@@ -97,6 +121,7 @@ const ContactForm = () => {
             setState({
                 name: '',
                 email: '',
+                phone: '',
                 message: '',
                 status: 'fail',
                 msg: 'El mensaje no pudo ser enviado. Intentelo nuevamente'
@@ -104,12 +129,15 @@ const ContactForm = () => {
           })
 
         // MailChimp
-        await addToMailchimp(email)
+        await addToMailchimp(email, {
+            FNAME: name,
+            phone: phone 
+          })
     }
     
     
     return (
-        <form 
+        <Form 
             css={ css` width: 100%;`}
             name="contacto"
             method="post"
@@ -138,6 +166,13 @@ const ContactForm = () => {
                 onChange={ onChange }
                 placeholder="Correo"
                 required                 
+            />
+            <InputForm 
+                type="text" 
+                name="phone"  
+                value={ phone }
+                onChange={ onChange }
+                placeholder="Teléfono"                
             />
             <textarea
                 name="message" 
@@ -169,7 +204,7 @@ const ContactForm = () => {
             <Btn
                 type="submit"
             >Enviar Mensaje</Btn>
-        </form>
+        </Form>
     )
 }
 

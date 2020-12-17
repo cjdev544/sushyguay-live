@@ -44,13 +44,11 @@ const DivForm = styled.div`
     }
     .fail {
         font-size: ${ sizes.title3 };
-        background-color: ${ colors.red };
-        color: ${ colors.white };
+        color: red;
         padding: 1rem;
         margin: 0.5rem;
         display: block;
-        font-style: italic;
-        color: red;        
+        font-style: italic;       
     }
 
     ${mq('min', 'medium')} {
@@ -80,42 +78,65 @@ const Btn = styled.button`
 
 const SubscribeForm = () => {
     
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('');
-  const [message, setMessage] = useState('');
+    const [status, setStatus] = useState('')
+    const [message, setMessage] = useState('')
+    const [user, setUser] = useState({
+        email: '',
+        name: ''
+    })
+    const { email, name } = user
 
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    // Mailchimp always responds with status code 200, accompanied by a string indicating the result of the response.
-    const { result } = await addToMailchimp(email);
-    let msg;
-    if(result === 'success') {
-        setEmail('');
-        msg = 'Muchas gracias por suscribirte a Sushi Guay'
-    }
-    else {
-        msg = 'Hubo un error al procesar la solicitud, intentalo de nuevo'
-    }
-    // Removes the HTML returned in some response messages in case of error
-    setMessage(msg);
-    setStatus(result);
+    const handleChange = e => setUser({
+        ...user,
+        [e.target.name]: e.target.value
+    })
+
+    const handleSubmit = async e => {
+
+        e.preventDefault();
+        // Mailchimp always responds with status code 200, accompanied by a string indicating the result of the response.
+        const { result } = await addToMailchimp(email, { FNAME: name })
+        let msg;
+        if(result === 'success') {
+            setUser({
+                email: '',
+                name: ''
+            });
+            msg = 'Muchas gracias por suscribirte a Sushi Guay'
+        }
+        else {
+            msg = 'Hubo un error al procesar la solicitud, intentalo de nuevo'
+        }
+        // Removes the HTML returned in some response messages in case of error
+        setMessage(msg);
+        setStatus(result);
   };
 
-  const handleChange = e => setEmail(e.target.value);
 
   return (
     <DivForm className="container spaceSectionDown">
         <h3 className="title3">Suscribete a Suchi Guay</h3>
-        <form>
+        <form
+            onSubmit={ handleSubmit }
+        >
             <p>
                 Mantente informado de nuestras promociones y de nuestros nuevos platos.
             </p>
             <div>
+                <input 
+                    type="text" 
+                    name="name"  
+                    value={ name }
+                    onChange={ handleChange }
+                    placeholder="Nombre"
+                    required                 
+                />
                 <input
                     type="email"
-                    onChange={handleChange}
-                    value={email}
+                    name="email"
+                    onChange={ handleChange }
+                    value={ email }
                     placeholder="Dejanos tu Correo"
                     required
                 />
@@ -135,8 +156,7 @@ const SubscribeForm = () => {
                 </span>
             </div>
             <Btn 
-                type="submit" 
-                onClick={handleSubmit}
+                type="submit"                 
             >
                 Suscribirme
             </Btn>
