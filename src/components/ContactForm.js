@@ -73,11 +73,9 @@ const ContactForm = () => {
             return
         }
 
-        // MailChimp
-        await addToMailchimp(email)
-
         // Netlify    
-        const form = e.target;
+        const form = e.target
+        console.log(e)
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -86,8 +84,7 @@ const ContactForm = () => {
             ...state
           })
         })
-          .then(() => {
-            console.log('Mensaje enviado')
+          .then(() => {            
             setState({
                 name: '',
                 email: '',
@@ -105,6 +102,9 @@ const ContactForm = () => {
                 msg: 'El mensaje no pudo ser enviado. Intentelo nuevamente'
             })
           })
+
+        // MailChimp
+        await addToMailchimp(email)
     }
     
     
