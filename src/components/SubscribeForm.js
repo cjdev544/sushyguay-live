@@ -34,10 +34,21 @@ const DivForm = styled.div`
     }
 
     .success {
+        font-size: ${ sizes.title3 };
+        background-color: ${ colors.callToAction };
+        color: ${ colors.white }; 
+        padding: 1rem;
+        margin: 0.5rem;       
+        display: block;
         font-style: italic;
-        color: ${ colors.callToAction };        
     }
     .fail {
+        font-size: ${ sizes.title3 };
+        background-color: ${ colors.red };
+        color: ${ colors.white };
+        padding: 1rem;
+        margin: 0.5rem;
+        display: block;
         font-style: italic;
         color: red;        
     }
@@ -108,13 +119,19 @@ const SubscribeForm = () => {
                     placeholder="Dejanos tu Correo"
                     required
                 />
+                <input
+                    type="checkbox"
+                    name="acceptsconsentcheckbox"
+                    required
+                />
+                <label htmlFor="acceptsconsentcheckbox"> He leído y acepto la política de privacidad</label>
                 <span
                     status={status}
                     className={
                         status === 'success' ? "success" : "fail"
                     }
                 >
-                {message}
+                    {message}
                 </span>
             </div>
             <Btn 

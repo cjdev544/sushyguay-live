@@ -98,6 +98,7 @@ const Btn = styled(Link)`
     text-align: center;
     background-color: transparent;
     border: 2px solid ${ colors.callToAction };
+    color: ${ colors.callToAction };
     padding: .8rem 1.2rem;
     border-radius: 10px;
     cursor: pointer;

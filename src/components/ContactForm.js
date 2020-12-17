@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import addToMailchimp from 'gatsby-plugin-mailchimp';
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import fonts from '../styles/fonts'
@@ -44,11 +45,10 @@ const ContactForm = () => {
         name: '',
         email: '',
         message: '',
-        // botField: '',
-        // formSending: '',
-        // formSubmitted: ''
+        status: '',
+        msg: ''
     })
-    const { name, email, message } = state
+    const { name, email, message, status, msg } = state
 
     const onChange = e => {
         setState({
@@ -72,7 +72,11 @@ const ContactForm = () => {
             // Todos los campos son obligatorios
             return
         }
-    
+
+        // MailChimp
+        await addToMailchimp(email)
+
+        // Netlify    
         const form = e.target;
         fetch("/", {
           method: "POST",
@@ -84,8 +88,23 @@ const ContactForm = () => {
         })
           .then(() => {
             console.log('Mensaje enviado')
+            setState({
+                name: '',
+                email: '',
+                message: '',
+                status: 'success',
+                msg: 'El mensaje fue enviado con exito'
+            })
           })
-          .catch((error) => { console.log(error)})
+          .catch((error) => {
+            setState({
+                name: '',
+                email: '',
+                message: '',
+                status: 'fail',
+                msg: 'El mensaje no pudo ser enviado. Intentelo nuevamente'
+            })
+          })
     }
     
     
@@ -139,6 +158,14 @@ const ContactForm = () => {
                 required
             />
             <label htmlFor="acceptsconsentcheckbox"> He leído y acepto la política de privacidad</label>
+            <span
+                status={status}
+                className={
+                    status === 'success' ? "success" : "fail"
+                }
+            >
+                { msg }
+            </span>
             <Btn
                 type="submit"
             >Enviar Mensaje</Btn>
@@ -147,10 +174,3 @@ const ContactForm = () => {
 }
 
 export default ContactForm
-
-
-// form.form--contact
-//         input(type="text" name="name" id="name" placeholder="Nombre y Apellido").form__item
-//         input(type="email" name="email" id="email" placeholder="Correo Electrónico").form__item
-//         textarea(name="message" id="message" placeholder="Escribe tu mensaje" rows="8").form__item
-//         input(type="submit", value="Enviar").form__item.form__submit

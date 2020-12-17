@@ -12,7 +12,7 @@ const Globals = () => {
     return (
         <>
            <Helmet>
-                <title>Sushi Guay</title>               */}
+                <title>Sushi Guay</title> 
             </Helmet>
 
             <Global 
