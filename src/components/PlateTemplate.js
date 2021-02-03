@@ -71,24 +71,24 @@ const DivImage = styled.div`
     }
 `
 
-const Btn = styled(Link)`
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    background-color: transparent;
-    border: 2px solid ${ colors.callToAction };
-    color: ${ colors.callToAction };
-    padding: .8rem 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all .4s ease-in-out;
-    &.snipcart-add-item { color: ${ colors.callToAction }; }
+// const Btn = styled(Link)`
+//     text-transform: uppercase;
+//     text-decoration: none;
+//     text-align: center;
+//     background-color: transparent;
+//     border: 2px solid ${ colors.callToAction };
+//     color: ${ colors.callToAction };
+//     padding: .8rem 1.2rem;
+//     border-radius: 10px;
+//     cursor: pointer;
+//     transition: all .4s ease-in-out;
+//     &.snipcart-add-item { color: ${ colors.callToAction }; }
 
-    &:hover {
-        background-color: ${ colors.callToAction };
-        color: ${ colors.white };
-    }
-`
+//     &:hover {
+//         background-color: ${ colors.callToAction };
+//         color: ${ colors.white };
+//     }
+// `
 
 
 const PlateTemplate = ({ data }) => {
@@ -124,7 +124,7 @@ const PlateTemplate = ({ data }) => {
                                 ) : <p className="ofert">Precio: { precio }€</p>
                             }
                         </div>
-                        <Btn 
+                        {/* <Btn 
                             to='#'
                             className="snipcart-add-item"
                             data-item-id={ nombreDelPlato }
@@ -135,7 +135,7 @@ const PlateTemplate = ({ data }) => {
                             data-item-name={ nombreDelPlato }
                         >
                             Agregar al carrito
-                        </Btn>
+                        </Btn> */}
                     </div>
                     {
                         imagenesDelPlato.map((image, index) => (

@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'gatsby-image'
+import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import colors from '../styles/colors'
-import { Link } from 'gatsby'
 import fonts from '../styles/fonts'
 
 /**
@@ -77,8 +77,11 @@ const IndexPlate = ({ plate }) => {
             descripcionCorta, 
             precio, 
             enOferta,
-            imagenesDelPlato    
+            imagenesDelPlato,
+            slug    
         } = plate
+
+    const linkPlate = '/' + slug
 
     const image = imagenesDelPlato[0].fluid
 
@@ -101,10 +104,10 @@ const IndexPlate = ({ plate }) => {
                             <p css={ css`text-decoration: line-through`}>Precio: { precio } €</p>
                             <p className="ofert">Oferta: { enOferta }€</p>
                         </>
-                    ) : <p>Precio: { precio }€</p>
+                    ) : ( <p>Precio: { precio }€</p> )
                 }
             </div>
-            <Btn 
+            {/* <Btn 
                 to="#"
                 className="snipcart-add-item"
                 data-item-id={ nombreDelPlato }
@@ -115,7 +118,8 @@ const IndexPlate = ({ plate }) => {
                 data-item-name={ nombreDelPlato }
             >
                 Agregar al carrito
-            </Btn>  
+            </Btn>   */}
+            <Btn to={ linkPlate }> Ver más </Btn>
         </Article>
     )
 }

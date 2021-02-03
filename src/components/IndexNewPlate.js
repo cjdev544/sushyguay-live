@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import QueryHomePage from "../queries/homePage"
 import Image from 'gatsby-image'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+// import { css } from '@emotion/core'
 import colors from '../styles/colors'
 import mq from '../styles/breakPoints'
 
@@ -64,44 +64,48 @@ const Article = styled.article`
     }
 `
 
-const Btn = styled(Link)`
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    background-color: transparent;
-    border: 2px solid ${ colors.callToAction };
-    padding: .8rem 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all .4s ease-in-out;
-    &.snipcart-add-item { color: ${ colors.callToAction }; }
+// const Btn = styled(Link)`
+//     text-transform: uppercase;
+//     text-decoration: none;
+//     text-align: center;
+//     background-color: transparent;
+//     border: 2px solid ${ colors.callToAction };
+//     padding: .8rem 1.2rem;
+//     border-radius: 10px;
+//     cursor: pointer;
+//     transition: all .4s ease-in-out;
+//     &.snipcart-add-item { color: ${ colors.callToAction }; }
 
-    &:hover {
-        background-color: ${ colors.callToAction };
-        color: ${ colors.white };
-    }
-`
+//     &:hover {
+//         background-color: ${ colors.callToAction };
+//         color: ${ colors.white };
+//     }
+// `
 
 
 const IndexNewPlate = () => {
 
-    const { platoEnPromociN } = QueryHomePage()
+    const { tituloDeSeccion,
+            nombreDelNuevoPlato,
+            descripcionDelPlato,
+            precio,
+            imagenDelNuevoPlato 
+    } = QueryHomePage()
  
-    const { 
-        tituloDeSeccion, 
-        nombreDelPlato, 
-        descripcionLarga,
-        descripcionCorta,
-        precio,
-        enOferta,
-        imagenesDelPlato
-    } = platoEnPromociN
+    // const {          
+    //     nombreDelPlato, 
+    //     descripcionLarga,
+    //     precio,
+    //     enOferta,
+    //     imagenesDelPlato
+    // } = platoEnPromociN
 
-    if(!nombreDelPlato) {
-        return null
-    }
+    // if(!nombreDelPlato) {
+    //     return null
+    // }
 
-    const image = imagenesDelPlato[0]
+    // const image = imagenesDelPlato[0]
+    console.log(imagenDelNuevoPlato.fluid)
 
     return (
         <section className="container spaceSectionDown">
@@ -113,26 +117,20 @@ const IndexNewPlate = () => {
                     data-sal-duration="1500"
                     data-sal-easing="ease"
                 >
-                    <Image fluid={ image.fluid } alt={ nombreDelPlato } />
+                    <Image fluid={ imagenDelNuevoPlato.fluid } alt={ nombreDelNuevoPlato } />hola
                 </div>
                 <div className="divPositionNewPlate">
-                    <h3 className="title3">{ nombreDelPlato }</h3>
-                    <p>{ descripcionLarga }</p>
-                    <footer>
-                        {
-                            enOferta 
-                            ? (
-                                <>
-                                    <p css={ css`text-decoration: line-through`}>Precio: { precio } €</p>
-                                    <p>enOferta: <span>{ enOferta } €</span></p>
-                                </>
-                            )
-                            : (
+                    <h3 className="title3">{ nombreDelNuevoPlato }</h3>
+                    <p>{ descripcionDelPlato }</p>
+
+                    {
+                        precio && (
+                            <footer>
                                 <p>Precio: <span>{ precio } €</span></p>
-                            )
-                        }
-                    </footer>
-                    <Btn 
+                            </footer>
+                        )
+                    }
+                    {/* <Btn 
                         to="#"
                         className="snipcart-add-item"
                         data-item-id={ nombreDelPlato }
@@ -143,7 +141,7 @@ const IndexNewPlate = () => {
                         data-item-name={ nombreDelPlato }
                     >
                         Agregar al carrito
-                    </Btn>
+                    </Btn> */}
                 </div>
             </Article>
         </section>

@@ -14,6 +14,7 @@ import {
     FaInstagram,
     FaMailBulk,
     FaWhatsapp,
+    FaTelegram,
     FaPhone
     } from 'react-icons/fa'
 import CookieConsent from 'react-cookie-consent'
@@ -92,24 +93,24 @@ const Copy = styled.div`
     }
 `
 
-const Btn = styled(Link)`
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    background-color: transparent;
-    border: 2px solid ${ colors.callToAction };
-    color: ${ colors.callToAction };
-    padding: .8rem 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all .4s ease-in-out;
-    &.snipcart-summary { color: ${ colors.callToAction }; }
+// const Btn = styled(Link)`
+//     text-transform: uppercase;
+//     text-decoration: none;
+//     text-align: center;
+//     background-color: transparent;
+//     border: 2px solid ${ colors.callToAction };
+//     color: ${ colors.callToAction };
+//     padding: .8rem 1.2rem;
+//     border-radius: 10px;
+//     cursor: pointer;
+//     transition: all .4s ease-in-out;
+//     &.snipcart-summary { color: ${ colors.callToAction }; }
 
-    &:hover {
-        background-color: ${ colors.callToAction };
-        color: ${ colors.white };
-    }
-`
+//     &:hover {
+//         background-color: ${ colors.callToAction };
+//         color: ${ colors.white };
+//     }
+// `
 
 const Footer = () => {
 
@@ -177,10 +178,18 @@ const Footer = () => {
                             >
                                 <FaWhatsapp className="colorLink" />
                             </a>
+                            <a 
+                                href="/" 
+                                target="_blank"
+                                rel="noreferrer" 
+                                aria-label="Telegram"
+                            >
+                                <FaTelegram className="colorLink" />
+                            </a>
                         </div>
-                        <Btn to="#" className="snipcart-checkout">
+                        {/* <Btn to="#" className="snipcart-checkout">
                             Ver Carrito
-                        </Btn>
+                        </Btn> */}
                     </div>             
                 </FooterMain>
             </div>

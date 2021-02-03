@@ -16,6 +16,7 @@ const QueryHomePage = () => {
             tituloOfertas
             platosEnOferta {
               id
+              slug
               nombreDelPlato
               descripcionCorta
               precio
@@ -37,17 +38,13 @@ const QueryHomePage = () => {
               }
             }
             tituloDeSeccion
-            platoEnPromociN {
-              nombreDelPlato
-              descripcionLarga
-              descripcionCorta
-              precio
-              enOferta
-              imagenesDelPlato {
-                fluid {
-                  ...GatsbyDatoCmsFluid_tracedSVG
-                  src
-                }
+            nombreDelNuevoPlato
+            descripcionDelPlato
+            precio
+            oferta
+            imagenDelNuevoPlato {
+              fluid {
+                src
               }
             }
             tituloDeMapa

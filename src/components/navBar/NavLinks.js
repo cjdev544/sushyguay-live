@@ -39,11 +39,11 @@ const NavLink = styled(Link)`
             width: 100%;
         }
 
-        &:last-of-type {
+        /* &:last-of-type {
             ::after {
                 width: 0;
             }
-        }
+        } */
     }
 
     &.active {
@@ -60,8 +60,8 @@ const NavLink = styled(Link)`
     }
 
     &:last-of-type {
-        font-size: 3rem;
-        color: ${ colors.callToAction };
+        /* font-size: 3rem;
+        color: ${ colors.callToAction }; */
         margin-right: 2rem;
     }
 `
@@ -75,12 +75,12 @@ const NavLinks = () => {
             <NavLink to={'/menu'} activeClassName="active">MENÚ</NavLink>            
             <NavLink to={'/galeria'} activeClassName="active">GALERÍA</NavLink>
             <NavLink to={'/contacto'} activeClassName="active">CONTACTO</NavLink>
-            <NavLink 
+            {/* <NavLink 
                 to="#"
                 className="snipcart-checkout"
             >
                 <FaCartArrowDown />
-            </NavLink> 
+            </NavLink>  */}
         </>
     )
 }
