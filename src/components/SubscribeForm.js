@@ -145,7 +145,7 @@ const SubscribeForm = () => {
                     name="acceptsconsentcheckbox"
                     required
                 />
-                <label htmlFor="acceptsconsentcheckbox"> He leído y acepto la política de privacidad</label>
+                <label htmlFor="acceptsconsentcheckbox"> He leído y acepto la <Link to={'/politica-privacidad'}>política de privacidad</Link></label>
                 <span
                     status={status}
                     className={

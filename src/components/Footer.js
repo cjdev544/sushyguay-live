@@ -140,8 +140,7 @@ const Footer = () => {
                     </div>
                     <div className="space">
                         <h2>Legales</h2>
-                        <Link to={'/'}>Aviso Legal</Link>
-                        <Link to={'/'}>Politica de privacidad</Link>
+                        <Link to={'/politica-privacidad'}>Política de privacidad</Link>
                     </div>
                     <div>
                         <div css={ 
