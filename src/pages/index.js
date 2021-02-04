@@ -10,22 +10,28 @@ import IndexMap from "../components/IndexMap"
 const IndexPage = () => {
 
   return  (
-    <Layout>
-      {
-        typeof window !== 'undefined' &&
-          <Header />
-      }
-      <main>
-        <IndexPlates />
-        <SubscribeForm />
-        <IndexAbout />
-        <IndexNewPlate />
+    <>
+      <SEO 
+          lang="es"
+          title="SushiGuay"
+      />
+      <Layout>
         {
           typeof window !== 'undefined' &&
-            <IndexMap />
+            <Header />
         }
-      </main>
-    </Layout>
+        <main>
+          <IndexPlates />
+          <SubscribeForm />
+          <IndexAbout />
+          <IndexNewPlate />
+          {
+            typeof window !== 'undefined' &&
+              <IndexMap />
+          }
+        </main>
+      </Layout>
+    </>
   )
 }
 

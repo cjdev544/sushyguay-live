@@ -18,6 +18,7 @@ import {
     FaPhone
     } from 'react-icons/fa'
 import CookieConsent from 'react-cookie-consent'
+import Whatapp from './Whatapp'
 
 /**
  *  Styles
@@ -33,7 +34,7 @@ const FooterMain = styled.div`
     ${mq('min', 'medium')} {
         padding-bottom: 0;
     }
-
+ 
     h2 {
         font-family: ${ fonts.firstFont };
         font-size: ${ sizes.small };
@@ -136,7 +137,7 @@ const Footer = () => {
                         <h2>Contacto</h2>
                         <p> <FaMapMarkerAlt className="fontIcon" /> { direccion }</p>
                         <p> <FaPhone className="fontIcon" /> { telefono }</p>
-                        <p> <FaMailBulk className="fontIcon" /> { correo }</p>
+                        {/* <p> <FaMailBulk className="fontIcon" /> { correo }</p> */}
                     </div>
                     <div className="space">
                         <h2>Legales</h2>
@@ -170,21 +171,21 @@ const Footer = () => {
                                 <FaMailBulk className="colorLink" />
                             </Link>
                             <a 
-                                href="/" 
+                                href={ whatsapp }
                                 target="_blank"
-                                rel="noreferrer" 
+                                rel="noreferrer"  
                                 aria-label="WhatsApp"
                             >
                                 <FaWhatsapp className="colorLink" />
                             </a>
-                            <a 
+                            {/* <a 
                                 href="/" 
                                 target="_blank"
                                 rel="noreferrer" 
                                 aria-label="Telegram"
                             >
                                 <FaTelegram className="colorLink" />
-                            </a>
+                            </a> */}
                         </div>
                         {/* <Btn to="#" className="snipcart-checkout">
                             Ver Carrito
@@ -205,6 +206,7 @@ const Footer = () => {
             >
                 Este sitio web utiliza cookies para mejorar la experiencia de usuario
             </CookieConsent> 
+            <Whatapp />
         </footer>
     )
 }

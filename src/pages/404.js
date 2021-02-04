@@ -11,11 +11,14 @@ const NotFoundPage = () => {
 
   return (
     <>
-      <SEO title="404: Not found" />
+      <SEO 
+        lang="es"
+        title="404: Not found" 
+      />
       <Layout>
         <OtherHeader 
             hero={ imagenDePortada }
-            title={ 'Página no encontrada' }
+            title={ 'Error: 404' }
         />
         <main>
             <h1
@@ -24,7 +27,7 @@ const NotFoundPage = () => {
                 text-align: center;
               `}
             >
-              Pagina no Econtrada
+              Página no Econtrada
             </h1>
         </main>
       </Layout>

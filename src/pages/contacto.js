@@ -20,6 +20,7 @@ import {
     FaPhone
     } from 'react-icons/fa'
 import InfoMap from '../components/InfoMap'
+import SEO from '../components/seo'
 
 
 /**
@@ -67,122 +68,129 @@ const Contacto = () => {
 
 
     return (
-        <Layout>
-            <OtherHeader 
-                hero={ imagenDePortada }
-                title={ tituloDePagina }
+        <>
+            <SEO
+                lang="es" 
+                title={ tituloDePagina } 
+                description={ parrafoPrincipal }
             />
-            <main>
-                <ContentUnderHero 
-                    parrafoPrincipal={ parrafoPrincipal}
-                /> 
-                
-                {/* ********* MAP ********* */}
-                <section 
-                    className="container"
-                    css={ css` 
-                        text-align: center;
-                        ${mq('min', 'medium')} {
-                            width: 70%;
-                        }
-                        ${mq('min', 'small')} {
-                            width: 100%;
-                        }
-                    `}
-                >
-                    <h3 
-                        css={ css`
-                                margin-top: 0;
-                                color: ${ colors.accent };
-                                font-family: ${ fonts.secondFont };
-
-                                ${mq('max', 'small')} {
-                                    margin-top: ${ spaces.spaceTitle };
-                                }
-                            `}
-                        className="title2"
-                            
-                    >
-                        { tituloDeMapa }
-                    </h3>
-                </section>
-                <div 
-                    className="container spaceSectionDown"
-                    css={ css` 
-                        height: 350px;
-                        ${mq('min', 'medium')} {
-                            width: 70%;
-                        }
-                    `}
-                >
-                    {
-                        typeof window !== 'undefined' &&
-                            <InfoMap />
-                    }
-                </div>
-
-                <div
-                    className="container spaceSectionDown"
-                    css={ css`
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        
-                        ${mq('min', 'small')} {
-                            flex-direction: row;
-                            width: 100%;
-                            padding: 3rem;
-                            border: 1px solid ${ colors.secondary };
-                        }
-
-                        ${mq('min', 'medium')} {
-                            width: 70%;
-                        }
-                    `}
-                >
-                    <Div>
-                        <div css={ css `
-                            ${mq('max', 'small')} {
-                                :first-of-type {margin-right: 1rem;}
+            <Layout>
+                <OtherHeader 
+                    hero={ imagenDePortada }
+                    title={ tituloDePagina }
+                />
+                <main>
+                    <ContentUnderHero 
+                        parrafoPrincipal={ parrafoPrincipal}
+                    /> 
+                    
+                    {/* ********* MAP ********* */}
+                    <section 
+                        className="container"
+                        css={ css` 
+                            text-align: center;
+                            ${mq('min', 'medium')} {
+                                width: 70%;
                             }
-                        `}>
-                            <p> <FaMapMarkerAlt className="fontIcon" /> { direccion }</p>
-                            <p> <FaPhone className="fontIcon" /> { telefono }</p>
-                            <p> <FaMailBulk className="fontIcon" /> { correo }</p>
-                        </div>
-                        <div>
-                            <h3 className="spaceSectionUp">Siguenos en Redes</h3>
-                            <a 
-                                href={ paginaDeFacebook }
-                                target="_blank"
-                                rel="noreferrer" 
-                                aria-label="Facebook"
-                            ><FaFacebook /> Facebook</a>
-                            <a 
-                                href={ paginaDeInstagram }
-                                target="_blank"
-                                rel="noreferrer" 
-                                aria-label="Instagram"
-                            ><FaInstagram /> Instagram</a>
-                        </div>
-                    </Div>
-                    <section>
-                        <h2 
+                            ${mq('min', 'small')} {
+                                width: 100%;
+                            }
+                        `}
+                    >
+                        <h3 
                             css={ css`
-                                margin-top: 0;
-                                ${mq('max', 'small')} {
-                                    margin-top: ${ spaces.spaceTitle };
-                                }
-                            `}
+                                    margin-top: 0;
+                                    color: ${ colors.accent };
+                                    font-family: ${ fonts.secondFont };
+
+                                    ${mq('max', 'small')} {
+                                        margin-top: ${ spaces.spaceTitle };
+                                    }
+                                `}
                             className="title2"
+                                
                         >
-                            Envianos un mensaje
-                        </h2>
-                        <ContactForm />
+                            { tituloDeMapa }
+                        </h3>
                     </section>
-                </div>
-            </main>
-        </Layout>
+                    <div 
+                        className="container spaceSectionDown"
+                        css={ css` 
+                            height: 350px;
+                            ${mq('min', 'medium')} {
+                                width: 70%;
+                            }
+                        `}
+                    >
+                        {
+                            typeof window !== 'undefined' &&
+                                <InfoMap />
+                        }
+                    </div>
+
+                    <div
+                        className="container spaceSectionDown"
+                        css={ css`
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            
+                            ${mq('min', 'small')} {
+                                flex-direction: row;
+                                width: 100%;
+                                padding: 3rem;
+                                border: 1px solid ${ colors.secondary };
+                            }
+
+                            ${mq('min', 'medium')} {
+                                width: 70%;
+                            }
+                        `}
+                    >
+                        <Div>
+                            <div css={ css `
+                                ${mq('max', 'small')} {
+                                    :first-of-type {margin-right: 1rem;}
+                                }
+                            `}>
+                                <p> <FaMapMarkerAlt className="fontIcon" /> { direccion }</p>
+                                <p> <FaPhone className="fontIcon" /> { telefono }</p>
+                                <p> <FaMailBulk className="fontIcon" /> { correo }</p>
+                            </div>
+                            <div>
+                                <h3 className="spaceSectionUp">Siguenos en Redes</h3>
+                                <a 
+                                    href={ paginaDeFacebook }
+                                    target="_blank"
+                                    rel="noreferrer" 
+                                    aria-label="Facebook"
+                                ><FaFacebook /> Facebook</a>
+                                <a 
+                                    href={ paginaDeInstagram }
+                                    target="_blank"
+                                    rel="noreferrer" 
+                                    aria-label="Instagram"
+                                ><FaInstagram /> Instagram</a>
+                            </div>
+                        </Div>
+                        <section>
+                            <h2 
+                                css={ css`
+                                    margin-top: 0;
+                                    ${mq('max', 'small')} {
+                                        margin-top: ${ spaces.spaceTitle };
+                                    }
+                                `}
+                                className="title2"
+                            >
+                                Envianos un mensaje
+                            </h2>
+                            <ContactForm />
+                        </section>
+                    </div>
+                </main>
+            </Layout>
+        </>
     )
 }
 

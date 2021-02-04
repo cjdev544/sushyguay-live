@@ -9,18 +9,27 @@ const Nosotros = () => {
     const data = QueryAboutPage()
     const { tituloDePagina, imagenDePortada } = data
 
+    const { parrafoPrincipal } = data
+
     return (
-        <Layout>
-            <OtherHeader 
-                hero={ imagenDePortada }
-                title={ tituloDePagina }
+        <>
+            <SEO 
+                lang="es"
+                title={ tituloDePagina } 
+                description={ parrafoPrincipal }
             />
-            <main>
-                <AboutContent 
-                    data={ data }
+            <Layout>
+                <OtherHeader 
+                    hero={ imagenDePortada }
+                    title={ tituloDePagina }
                 />
-            </main>
-        </Layout>
+                <main>
+                    <AboutContent 
+                        data={ data }
+                    />
+                </main>
+            </Layout>
+        </>
     )
 }
 
