@@ -14,7 +14,7 @@ import {
     FaInstagram,
     FaMailBulk,
     FaWhatsapp,
-    FaTelegram,
+    // FaTelegram,
     FaPhone
     } from 'react-icons/fa'
 import CookieConsent from 'react-cookie-consent'
@@ -122,7 +122,7 @@ const Footer = () => {
     const {
         direccion,
         telefono,
-        correo,
+        // correo,
         whatsapp,
         paginaDeFacebook,
         paginaDeInstagram,

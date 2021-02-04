@@ -6,6 +6,7 @@ import SubscribeForm from "../components/SubscribeForm"
 import IndexAbout from "../components/IndexAbout"
 import IndexNewPlate from "../components/IndexNewPlate"
 import IndexMap from "../components/IndexMap"
+import SEO from "../components/seo"
 
 const IndexPage = () => {
 

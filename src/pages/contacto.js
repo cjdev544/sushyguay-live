@@ -15,8 +15,6 @@ import {
     FaMapMarkerAlt,
     FaFacebook,
     FaInstagram,
-    FaMailBulk,
-    FaWhatsapp,
     FaPhone
     } from 'react-icons/fa'
 import InfoMap from '../components/InfoMap'
@@ -60,8 +58,6 @@ const Contacto = () => {
     const {
         direccion,
         telefono,
-        correo,
-        whatsapp,
         paginaDeFacebook,
         paginaDeInstagram,
     } = QueryFooter()
@@ -155,7 +151,6 @@ const Contacto = () => {
                             `}>
                                 <p> <FaMapMarkerAlt className="fontIcon" /> { direccion }</p>
                                 <p> <FaPhone className="fontIcon" /> { telefono }</p>
-                                <p> <FaMailBulk className="fontIcon" /> { correo }</p>
                             </div>
                             <div>
                                 <h3 className="spaceSectionUp">Siguenos en Redes</h3>

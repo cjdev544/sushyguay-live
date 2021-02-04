@@ -96,7 +96,6 @@ const PlateTemplate = ({ data }) => {
     const {
         nombreDelPlato,
         descripcionLarga,
-        descripcionCorta,
         precio,
         enOferta,
         imagenesDelPlato

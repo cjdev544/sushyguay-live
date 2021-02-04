@@ -3,15 +3,12 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OtherHeader from '../components/OtherHeader'
 import QueryMenuPage from '../queries/menu'
-import QueryMenuPage from '../queries/menu'
 import ContentMenu from '../components/ContentMenu'
 
 const Menu = () => {
 
     const data = QueryMenuPage()
-    const { tituloDePagina, imagenDePortada } = data
-
-    const { parrafoPrincipal } = QueryMenuPage()
+    const { tituloDePagina, imagenDePortada, parrafoPrincipal } = data
 
     return (
         <>
