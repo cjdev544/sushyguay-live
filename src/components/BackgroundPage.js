@@ -65,7 +65,7 @@ const BackgroundPage = () => {
                     height: 100%;
                 `}>
                     <Title title={ nombreDeLaMarca } />
-                    <p css={ css`
+                    <p className="container" css={ css`
                         text-align: center; 
                         margin-top: 4rem;
                         color: #fff;

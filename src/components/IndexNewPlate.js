@@ -105,7 +105,6 @@ const IndexNewPlate = () => {
     // }
 
     // const image = imagenesDelPlato[0]
-    console.log(imagenDelNuevoPlato.fluid)
 
     return (
         <section className="container spaceSectionDown">

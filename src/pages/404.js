@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import OtherHeader from "../components/OtherHeader"
 import SEO from "../components/seo"
 import QueryGaleryPage from "../queries/galery"
+import { css } from '@emotion/core'
 
 const NotFoundPage = () => { 
 
