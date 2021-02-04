@@ -8,7 +8,7 @@ import QueryFooter from '../queries/footer'
 const BtnWath = styled.div`
     display: block;
     width: 40px;
-    height: 40px;
+    height: 80px;
     color: #fff;
     position: fixed;
     right: 15px;
