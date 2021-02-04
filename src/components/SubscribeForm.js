@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';

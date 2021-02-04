@@ -117,7 +117,7 @@ const IndexNewPlate = () => {
                     data-sal-duration="1500"
                     data-sal-easing="ease"
                 >
-                    <Image fluid={ imagenDelNuevoPlato.fluid } alt={ nombreDelNuevoPlato } />hola
+                    <Image fluid={ imagenDelNuevoPlato.fluid } alt={ nombreDelNuevoPlato } />
                 </div>
                 <div className="divPositionNewPlate">
                     <h3 className="title3">{ nombreDelNuevoPlato }</h3>

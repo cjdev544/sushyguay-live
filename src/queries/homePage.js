@@ -44,6 +44,7 @@ const QueryHomePage = () => {
             oferta
             imagenDelNuevoPlato {
               fluid {
+                ...GatsbyDatoCmsFluid_tracedSVG
                 src
               }
             }

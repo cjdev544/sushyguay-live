@@ -17,7 +17,14 @@ const NotFoundPage = () => {
             title={ 'Página no encontrada' }
         />
         <main>
-            <h1>404</h1>
+            <h1
+              css={ css`
+                padding: 5rem;
+                text-align: center;
+              `}
+            >
+              Pagina no Econtrada
+            </h1>
         </main>
       </Layout>
     </>
