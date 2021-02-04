@@ -10,6 +10,7 @@ import { css } from '@emotion/core'
 import sizes from '../styles/sizes'
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
+import SEO from './seo'
 
 export const query = graphql`
     query($slug: String!) {
