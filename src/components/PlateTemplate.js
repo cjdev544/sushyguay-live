@@ -96,82 +96,90 @@ const PlateTemplate = ({ data }) => {
     const {
         nombreDelPlato,
         descripcionLarga,
+        descripcionCorta,
         precio,
         enOferta,
         imagenesDelPlato
     } = data.allDatoCmsPlato.nodes[0]
 
     return (
-        <Layout>
-            <OtherHeader 
-                hero={ imagenesDelPlato[0] }
-                title={ nombreDelPlato }
+        <>
+            <SEO 
+                lang="es"
+                title={ nombreDelPlato } 
+                description={ descripcionCorta }
             />
-            <main>
-                <ContentUnderHero 
-                    parrafoPrincipal={ descripcionLarga }
+            <Layout>
+                <OtherHeader 
+                    hero={ imagenesDelPlato[0] }
+                    title={ nombreDelPlato }
                 />
-                <DivImage className="container spaceSectionDown ">
-                    <div className="price">
-                        <div>
-                            {
-                                enOferta ? (
-                                    <>
-                                        <p css={ css`text-decoration: line-through`}>Precio: { precio } €</p>
-                                        <p className="ofert">Oferta: { enOferta }€</p>
-                                    </>
-                                ) : <p className="ofert">Precio: { precio }€</p>
-                            }
-                        </div>
-                        {/* <Btn 
-                            to='#'
-                            className="snipcart-add-item"
-                            data-item-id={ nombreDelPlato }
-                            data-item-price={ enOferta ? enOferta : precio }
-                            data-item-description={ descripcionCorta }
-                            data-item-url="http://localhost:8000/menu"
-                            data-item-image={ imagenesDelPlato[0].fluid.src }
-                            data-item-name={ nombreDelPlato }
-                        >
-                            Agregar al carrito
-                        </Btn> */}
-                    </div>
-                    {
-                        imagenesDelPlato.map((image, index) => (
-                            <div 
-                                key={ index }  
-                                className="imgPlate"
-                            >
-                                <Image                                        
-                                    fluid={ image.fluid } 
-                                    alt={ image.filename } 
-                                />
+                <main>
+                    <ContentUnderHero 
+                        parrafoPrincipal={ descripcionLarga }
+                    />
+                    <DivImage className="container spaceSectionDown ">
+                        <div className="price">
+                            <div>
+                                {
+                                    enOferta ? (
+                                        <>
+                                            <p css={ css`text-decoration: line-through`}>Precio: { precio } €</p>
+                                            <p className="ofert">Oferta: { enOferta }€</p>
+                                        </>
+                                    ) : <p className="ofert">Precio: { precio }€</p>
+                                }
                             </div>
-                        ))
-                    }
-                    <Link 
-                        to={'/menu'}
-                        css={ css`
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            font-family: ${ fonts.secondFont };
-                            font-size: ${ sizes.title3 };
-                            background-color: ${ colors.secondary };
-                            text-decoration: none;
-                            transition: all .4s ease-in-out;
+                            {/* <Btn 
+                                to='#'
+                                className="snipcart-add-item"
+                                data-item-id={ nombreDelPlato }
+                                data-item-price={ enOferta ? enOferta : precio }
+                                data-item-description={ descripcionCorta }
+                                data-item-url="http://localhost:8000/menu"
+                                data-item-image={ imagenesDelPlato[0].fluid.src }
+                                data-item-name={ nombreDelPlato }
+                            >
+                                Agregar al carrito
+                            </Btn> */}
+                        </div>
+                        {
+                            imagenesDelPlato.map((image, index) => (
+                                <div 
+                                    key={ index }  
+                                    className="imgPlate"
+                                >
+                                    <Image                                        
+                                        fluid={ image.fluid } 
+                                        alt={ image.filename } 
+                                    />
+                                </div>
+                            ))
+                        }
+                        <Link 
+                            to={'/menu'}
+                            css={ css`
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-family: ${ fonts.secondFont };
+                                font-size: ${ sizes.title3 };
+                                background-color: ${ colors.secondary };
+                                text-decoration: none;
+                                transition: all .4s ease-in-out;
 
-                            span {
-                                font-size: 4rem;
-                                margin-right: 1rem;
-                            }
+                                span {
+                                    font-size: 4rem;
+                                    margin-right: 1rem;
+                                }
 
-                            :hover { color: #000; }
-                        `}
-                    ><span>&#x2ba8;</span> Regresar al Menú</Link>
-                </DivImage> 
-            </main>
-        </Layout>
+                                :hover { color: #000; }
+                            `}
+                        ><span>&#x2ba8;</span> Regresar al Menú</Link>
+                    </DivImage> 
+                </main>
+            </Layout>
+        </>
     )
 }
 
