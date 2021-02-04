@@ -41,7 +41,6 @@ const QueryHomePage = () => {
             nombreDelNuevoPlato
             descripcionDelPlato
             precio
-            oferta
             imagenDelNuevoPlato {
               fluid {
                 ...GatsbyDatoCmsFluid_tracedSVG
