@@ -14,6 +14,7 @@ const IndexPage = () => {
     <>
       <SEO 
           lang="es"
+          title="Inicio"
       />
       <Layout>
         {
