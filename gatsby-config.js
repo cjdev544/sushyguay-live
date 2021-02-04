@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://gallant-jang-4c6625.netlify.app/`,
+    siteUrl: `https://sushiguay.com`,
     title: `Sushi Guay`,
     description: `Web de comida con comercio integrado`,
     author: `CjDev`,
