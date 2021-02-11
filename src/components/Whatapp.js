@@ -31,7 +31,7 @@ const Whatapp = () => {
                 rel="noreferrer" 
                 aria-label="Whatsapp"
             >
-                <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="Icono WhatsApp" />
+                <img src="https://s2.accesoperu.com/logos/btn_whatsapp.png" alt="Icono WhatsApp" />
             </a>
         </BtnWath>
     )
