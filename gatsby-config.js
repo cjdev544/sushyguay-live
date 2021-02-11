@@ -4,49 +4,49 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://sushiguay.com`,
+    siteUrl: `https://www.sushiguay.com`,
     title: `Sushi Guay`,
-    description: `Web de comida con comercio integrado`,
-    author: `CjDev`,
+    description: `Restauran de sushi, comida china y otros platos que se ligan con el gran sabor latino para crear sabores increibles`,
+    author: `sushiguay`,
   },
   plugins: [
-    // {
-    //   resolve: "gatsby-plugin-google-tagmanager",
-    //   options: {
-    //     id: process.env.GATSBY_GOOGLE_TAG_MANAGER,
-    //     includeInDevelopment: false,
-    //   },
-    // },
-    // { 
-    //   resolve: "gatsby-plugin-preconnect",
-    //   options: {
-    //     domains: [
-    //       "https://www.google-analytics.com",
-    //       "https://www.googletagmanager.com",
-    //     ],
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-gdpr-cookies`,
-    //   options: {
-    //     googleAnalytics: {
-    //       trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID, // leave empty if you want to disable the tracker
-    //       cookieName: 'gatsby-gdpr-google-analytics', // default
-    //       anonymize: true // default
-    //     },
-    //     googleTagManager: {
-    //       trackingId: process.env.GATSBY_GOOGLE_TAG_MANAGER, // leave empty if you want to disable the tracker
-    //       cookieName: 'gatsby-gdpr-google-tagmanager', // default
-    //       dataLayerName: 'dataLayer', // default
-    //     },
-    //     // facebookPixel: {
-    //     //   pixelId: 'YOUR_FACEBOOK_PIXEL_ID', // leave empty if you want to disable the tracker
-    //     //   cookieName: 'gatsby-gdpr-facebook-pixel', // default
-    //     // },
-    //     // defines the environments where the tracking should be available  - default is ["production"]
-    //     environments: ['production', 'development']
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: process.env.GATSBY_GOOGLE_TAG_MANAGER,
+        includeInDevelopment: false,
+      },
+    },
+    { 
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: [
+          "https://www.google-analytics.com",
+          "https://www.googletagmanager.com",
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID, // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-analytics', // default
+          anonymize: true // default
+        },
+        googleTagManager: {
+          trackingId: process.env.GATSBY_GOOGLE_TAG_MANAGER, // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-tagmanager', // default
+          dataLayerName: 'dataLayer', // default
+        },
+        // facebookPixel: {
+        //   pixelId: 'YOUR_FACEBOOK_PIXEL_ID', // leave empty if you want to disable the tracker
+        //   cookieName: 'gatsby-gdpr-facebook-pixel', // default
+        // },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development']
+      },
+    },
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
@@ -100,8 +100,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Sushi Guay`,
-        short_name: `Sushi Guay`,
+        name: `SushiGuay`,
+        short_name: `SushiGuay`,
         start_url: `/`,
         background_color: `#dedede`,
         theme_color: `#dedede`,
